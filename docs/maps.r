@@ -15,7 +15,7 @@ crises <- icb_crises$crisno %>% unique()
 show_plot <- function(x){
   plot_path <- paste0('metro_plots/',basename(x))
   cat(sep="",
-      '<img src="',plot_path,'">'
+      '\n\n<img src="',plot_path,'">\n\n'
       )
 }
 map <- function(i, fromscratch=T){

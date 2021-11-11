@@ -4,7 +4,6 @@ output: html_notebook
 ---
 
 
-
 ```{r setup, include=FALSE, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
 
 #On how to reset the repo to save space
@@ -23,9 +22,9 @@ chunk <- function(x,n) split(x, factor(sort(rank(x)%%n)))
 chunks <- chunk(1:n,30)
 
 df <- sapply(chunks, range) %>% t() %>% as.data.frame() %>%
-  mutate(filenames_html = glue("/icbe/ICBe_Website_Cases_{V1}to{V2}.nb.html")) %>%
+  mutate(filenames_html = glue("ICBe_Website_Cases_{V1}to{V2}.html")) %>%
   mutate(filenames_rmd = glue("/mnt/8tb_a/rwd_github_private/icbe/docs/ICBe_Website_Cases_{V1}to{V2}.rmd")) %>%
-  mutate(link = glue("[{V1}-{V2}](/icbe/ICBe_Website_Cases_{V1}to{V2}.html);"))
+  mutate(link = glue("[{V1}-{V2}](ICBe_Website_Cases_{V1}to{V2}.html);"))
 
 for(i in 1:nrow(df)){
   
@@ -33,9 +32,10 @@ text <- glue(.open='{|', .close='|}',
 "---
 title: 'ICBe Crises {|df$V1[i]|}-{|df$V2[i]|}'
 output:
-  html_notebook:
+  html_document:
     toc: yes
     self_contained: no
+    lib_dir: 'lib'
 ---
 
 <style>
@@ -75,10 +75,11 @@ writeLines(text, df$filenames_rmd[i])
 ```
 
 ```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+library(knitr)
 for(i in 1:nrow(df)){
   print(i)
-  #rmarkdown::render(df$filenames_rmd[i], "html_document", quiet=T)
-  knit2html(df$filenames_rmd[i],  quiet=T, options=c("use_xhtml","smartypants","mathjax","highlight_code")) 
+  rmarkdown::render(df$filenames_rmd[i], "html_document", quiet=T)
+  #knit2html(df$filenames_rmd[i],  quiet=T, options=c("use_xhtml","smartypants","mathjax","highlight_code")) 
 }
 ```
 

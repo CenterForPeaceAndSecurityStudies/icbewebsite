@@ -1,9 +1,10 @@
 ---
 title: 'ICBe Crises 208-223'
 output:
-  html_notebook:
+  html_document:
     toc: yes
     self_contained: no
+    lib_dir: 'lib'
 ---
 
 <style>
@@ -21,36 +22,36 @@ source('/mnt/8tb_a/rwd_github_private/icbe/docs/maps.r')
 
 Back to [Main Page](/icbe/index.html).    
 View Crises 
-[1-15](/icbe/ICBe_Website_Cases_1to15.html);
-[16-31](/icbe/ICBe_Website_Cases_16to31.html);
-[32-47](/icbe/ICBe_Website_Cases_32to47.html);
-[48-63](/icbe/ICBe_Website_Cases_48to63.html);
-[64-79](/icbe/ICBe_Website_Cases_64to79.html);
-[80-95](/icbe/ICBe_Website_Cases_80to95.html);
-[96-111](/icbe/ICBe_Website_Cases_96to111.html);
-[112-127](/icbe/ICBe_Website_Cases_112to127.html);
-[128-143](/icbe/ICBe_Website_Cases_128to143.html);
-[144-159](/icbe/ICBe_Website_Cases_144to159.html);
-[160-175](/icbe/ICBe_Website_Cases_160to175.html);
-[176-191](/icbe/ICBe_Website_Cases_176to191.html);
-[192-207](/icbe/ICBe_Website_Cases_192to207.html);
-[208-223](/icbe/ICBe_Website_Cases_208to223.html);
-[224-239](/icbe/ICBe_Website_Cases_224to239.html);
-[240-255](/icbe/ICBe_Website_Cases_240to255.html);
-[256-271](/icbe/ICBe_Website_Cases_256to271.html);
-[272-287](/icbe/ICBe_Website_Cases_272to287.html);
-[288-303](/icbe/ICBe_Website_Cases_288to303.html);
-[304-319](/icbe/ICBe_Website_Cases_304to319.html);
-[320-335](/icbe/ICBe_Website_Cases_320to335.html);
-[336-351](/icbe/ICBe_Website_Cases_336to351.html);
-[352-367](/icbe/ICBe_Website_Cases_352to367.html);
-[368-383](/icbe/ICBe_Website_Cases_368to383.html);
-[384-399](/icbe/ICBe_Website_Cases_384to399.html);
-[400-415](/icbe/ICBe_Website_Cases_400to415.html);
-[416-431](/icbe/ICBe_Website_Cases_416to431.html);
-[432-446](/icbe/ICBe_Website_Cases_432to446.html);
-[447-461](/icbe/ICBe_Website_Cases_447to461.html);
-[462-476](/icbe/ICBe_Website_Cases_462to476.html);
+[1-15](ICBe_Website_Cases_1to15.html);
+[16-31](ICBe_Website_Cases_16to31.html);
+[32-47](ICBe_Website_Cases_32to47.html);
+[48-63](ICBe_Website_Cases_48to63.html);
+[64-79](ICBe_Website_Cases_64to79.html);
+[80-95](ICBe_Website_Cases_80to95.html);
+[96-111](ICBe_Website_Cases_96to111.html);
+[112-127](ICBe_Website_Cases_112to127.html);
+[128-143](ICBe_Website_Cases_128to143.html);
+[144-159](ICBe_Website_Cases_144to159.html);
+[160-175](ICBe_Website_Cases_160to175.html);
+[176-191](ICBe_Website_Cases_176to191.html);
+[192-207](ICBe_Website_Cases_192to207.html);
+[208-223](ICBe_Website_Cases_208to223.html);
+[224-239](ICBe_Website_Cases_224to239.html);
+[240-255](ICBe_Website_Cases_240to255.html);
+[256-271](ICBe_Website_Cases_256to271.html);
+[272-287](ICBe_Website_Cases_272to287.html);
+[288-303](ICBe_Website_Cases_288to303.html);
+[304-319](ICBe_Website_Cases_304to319.html);
+[320-335](ICBe_Website_Cases_320to335.html);
+[336-351](ICBe_Website_Cases_336to351.html);
+[352-367](ICBe_Website_Cases_352to367.html);
+[368-383](ICBe_Website_Cases_368to383.html);
+[384-399](ICBe_Website_Cases_384to399.html);
+[400-415](ICBe_Website_Cases_400to415.html);
+[416-431](ICBe_Website_Cases_416to431.html);
+[432-446](ICBe_Website_Cases_432to446.html);
+[447-461](ICBe_Website_Cases_447to461.html);
+[462-476](ICBe_Website_Cases_462to476.html);
 
 
 ```{r, eval=T, echo=F, results='asis', include=T, message=F, cache=F, warning=F}
