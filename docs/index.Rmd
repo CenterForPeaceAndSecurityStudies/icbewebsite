@@ -16,7 +16,7 @@ library(tidyverse)
 
 
 ```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
-fromscratch=F
+fromscratch=T
 library(glue)
 n <- 476
 chunk <- function(x,n) split(x, factor(sort(rank(x)%%n)))
