@@ -136,14 +136,6 @@ map <- function(i, fromscratch=T){
         vertical_offset= (p_phoenix_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_phoenix_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
         horizontal_offset= (p_phoenix_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_phoenix_metro_plot$actor_colors)
 
-        #ggsave(save_file_phoenix_png,
-        #       plot=p_phoenix_metro_plot +
-        #         theme(plot.margin=unit(c(0,0,0,0),"in")) +
-        #         scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
-        #         scale_y_continuous(expand = expansion(add = c(0, vertical_offset*3   ) ) ) , #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
-        #       width =p_width , height =p_height
-        #       #dpi = 1200
-        #)
         svglite(save_file_phoenix_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
                 width =p_width , height =p_height
                 #dpi = 1200
@@ -173,15 +165,6 @@ map <- function(i, fromscratch=T){
         p_height=min(max((p_icews_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
         vertical_offset= (p_icews_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_icews_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
         horizontal_offset= (p_icews_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_icews_metro_plot$actor_colors)
-
-        #ggsave(save_file_icews_png,
-        #       plot=p_icews_metro_plot +
-        #         theme(plot.margin=unit(c(0,0,0,0),"in")) +
-        #         scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
-        #         scale_y_continuous(expand = expansion(add = c(0, vertical_offset*3   ) ) )  , #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
-        #       width =p_width , height =p_height
-        #       #dpi = 1200
-        #)
         svglite(save_file_icews_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
                 width =p_width , height =p_height
                 #dpi = 1200
@@ -208,14 +191,7 @@ map <- function(i, fromscratch=T){
         plot_mids_height <- p_mids_metro_plot$sentence_count
         p_width=max(length(p_mids_metro_plot$actor_colors)*1.5,14)
         p_height=min(max(p_mids_metro_plot$sentence_count/2,6),12) #cap it at 49 inches long
-        #ggsave(save_file_mids_png,
-        #       plot=p_mids_metro_plot +
-        #         theme(plot.margin=unit(c(0,0,0,0),"in"))+
-        #         scale_x_continuous(expand = expansion(add = c(10,15))) +
-        #         scale_y_continuous(expand = expansion(add = c(100, 100))), #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
-        #       width =p_width , height =p_height
-        #       #dpi = 1200
-        #)
+
         svglite(save_file_mids_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
                 width =p_width , height =p_height
                 #dpi = 1200
@@ -229,6 +205,33 @@ map <- function(i, fromscratch=T){
         invisible(dev.off())
       }
       show_plot(save_file_mids_png)
+      #cat('</details>')
+    }
+
+    #Mids Incidents
+    save_file_mids_incidents_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_mids_incidents_metro_plot_",crisis,".Rds")
+    save_file_mids_incidents_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_mids_incidents_metro_plot_",crisis,".svg")
+    if(file.exists(save_file_mids_incidents_p)){
+      cat('\n\n### MIDs Incidents Crisis Map\n\n')
+      if(T){
+        p_metro_plot <- readRDS(save_file_mids_incidents_p)
+        p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+        p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
+        vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
+        horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
+        svglite(save_file_mids_incidents_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+                width =p_width , height =p_height
+                #dpi = 1200
+        )
+        plot(
+          p_metro_plot +
+            theme(plot.margin=unit(c(0,0,0,0),"in")) +
+            scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
+            scale_y_continuous(expand = expansion(add = c(0, vertical_offset*1   ) ) )
+        )
+        invisible(dev.off())
+      }
+      show_plot(save_file_mids_incidents_png)
       #cat('</details>')
     }
 
