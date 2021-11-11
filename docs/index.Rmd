@@ -1,0 +1,93 @@
+---
+title: "ICBe (alpha website do not circulate)"
+output: html_notebook
+---
+
+
+
+```{r setup, include=FALSE, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+
+#On how to reset the repo to save space
+#https://github.com/18F/C2/issues/439
+
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+
+```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+fromscratch=F
+library(glue)
+n <- 476
+chunk <- function(x,n) split(x, factor(sort(rank(x)%%n)))
+chunks <- chunk(1:n,30)
+
+df <- sapply(chunks, range) %>% t() %>% as.data.frame() %>%
+  mutate(filenames_html = glue("/icbe/ICBe_Website_Cases_{V1}to{V2}.nb.html")) %>%
+  mutate(filenames_rmd = glue("/mnt/8tb_a/rwd_github_private/icbe/docs/ICBe_Website_Cases_{V1}to{V2}.rmd")) %>%
+  mutate(link = glue("[{V1}-{V2}](/icbe/ICBe_Website_Cases_{V1}to{V2}.html);"))
+
+for(i in 1:nrow(df)){
+  
+text <- glue(.open='{|', .close='|}',
+"---
+title: 'ICBe Crises {|df$V1[i]|}-{|df$V2[i]|}'
+output:
+  html_notebook:
+    toc: yes
+---
+
+<style>
+    body .main-container {
+        max-width: 1500px;
+    }
+</style>
+
+
+\`\`\`{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+source('/mnt/8tb_a/rwd_github_private/icbe/docs/maps.r')
+\`\`\`
+
+
+
+Back to [Main Page](/icbe/index.html).    
+View Crises 
+{|df$link %>% paste0(collapse='\n')|}
+
+
+\`\`\`{r, eval=T, echo=F, results='asis', include=T, message=F, cache=F, warning=F}
+
+for(i in {|df$V1[i]|}:{|df$V2[i]|} ) { 
+  
+  map(i, fromscratch={|fromscratch|})
+
+}
+
+\`\`\`
+")
+
+writeLines(text, df$filenames_rmd[i])
+
+}
+
+
+```
+
+```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+for(i in 1:nrow(df)){
+  print(i)
+  rmarkdown::render(df$filenames_rmd[i], "html_document", quiet=T)
+}
+```
+
+
+If you spot a bug in the plots or codings please file an issue ticket on the [repo](https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/)
+
+View Crises: 
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+glue(
+"
+{df$link %>% paste0(collapse='\n')}
+"
+)
+```
