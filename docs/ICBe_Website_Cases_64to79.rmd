@@ -58,7 +58,7 @@ View Crises
 
 for(i in 64:79 ) { 
   
-  map(i, fromscratch=TRUE)
+  map(i, fromscratch=FALSE)
 
 }
 

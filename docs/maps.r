@@ -166,11 +166,11 @@ map <- function(i, fromscratch=T){
     #ICEWS
     if(file.exists(save_file_icews_p)){
       cat('\n\n### ICEWS Crisis Map\n\n')
-      if(fromscratch){
+      if(T){
         p_icews_metro_plot <- readRDS(save_file_icews_p)
         plot_icews_height <- p_icews_metro_plot$sentence_count
         p_width=max(length(p_icews_metro_plot$actor_colors)*1.5,14)
-        p_height=min(max((p_icews_metro_plot$data$y %>% unique() %>% length()) /2,6),40) #cap it at 30 inches long
+        p_height=min(max((p_icews_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
         vertical_offset= (p_icews_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_icews_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
         horizontal_offset= (p_icews_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_icews_metro_plot$actor_colors)
 
@@ -190,7 +190,7 @@ map <- function(i, fromscratch=T){
           p_icews_metro_plot +
             theme(plot.margin=unit(c(0,0,0,0),"in")) +
             scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
-            scale_y_continuous(expand = expansion(add = c(0, vertical_offset*3   ) ) )
+            scale_y_continuous(expand = expansion(add = c(0, vertical_offset*4   ) ) )
         )
         invisible(dev.off())
 
