@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1008.00pt' height='432.00pt' viewBox='0 0 1008.00 432.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw'>
+    <rect x='0.00' y='0.00' width='1008.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<rect x='0.00' y='0.00' width='1008.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMi43NHwxMDA4LjAwfDAuMDB8NDI5LjI2'>
+    <rect x='2.74' y='0.00' width='1005.26' height='429.26' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMi43NHwxMDA4LjAwfDAuMDB8NDI5LjI2)'>
+<circle cx='103.27' cy='321.95' r='1.42' style='stroke-width: 0.71; stroke: #A6CEE3; fill: #A6CEE3;' />
+<circle cx='639.40' cy='429.26' r='1.42' style='stroke-width: 0.71; stroke: #1F78B4; fill: #1F78B4;' />
+<circle cx='907.47' cy='429.26' r='1.42' style='stroke-width: 0.71; stroke: #B2DF8A; fill: #B2DF8A;' />
+<circle cx='371.34' cy='321.95' r='1.42' style='stroke-width: 0.71; stroke: #33A02C; fill: #33A02C;' />
+<polyline points='105.78,313.82 106.10,312.78 107.10,311.37 108.23,309.99 109.51,308.64 110.92,307.33 112.46,306.05 114.13,304.80 115.92,303.58 117.83,302.40 119.86,301.25 122.01,300.13 124.26,299.05 126.63,298.00 129.10,296.98 131.67,296.00 134.33,295.04 137.10,294.12 139.95,293.24 142.89,292.38 145.92,291.56 149.02,290.77 152.21,290.02 155.47,289.29 158.80,288.60 162.20,287.95 165.66,287.32 169.18,286.73 172.77,286.17 176.40,285.65 180.09,285.16 183.83,284.70 187.61,284.27 191.43,283.87 195.29,283.51 199.19,283.18 203.12,282.89 207.07,282.63 211.05,282.40 215.05,282.20 219.07,282.03 223.11,281.90 227.15,281.80 231.21,281.74 235.27,281.71 239.33,281.71 243.39,281.74 247.45,281.80 251.49,281.90 255.53,282.03 259.55,282.20 263.55,282.40 267.53,282.63 271.49,282.89 275.41,283.18 279.31,283.51 283.17,283.87 286.99,284.27 290.77,284.70 294.51,285.16 298.20,285.65 301.84,286.17 305.42,286.73 308.94,287.32 312.41,287.95 315.80,288.60 319.13,289.29 322.39,290.02 325.58,290.77 328.69,291.56 331.71,292.38 334.65,293.24 337.50,294.12 340.27,295.04 342.93,296.00 345.50,296.98 347.97,298.00 350.34,299.05 352.59,300.13 354.74,301.25 356.77,302.40 358.68,303.58 360.47,304.80 362.14,306.05 363.68,307.33 365.09,308.64 366.37,309.99 367.50,311.37 368.50,312.78 368.82,313.82 ' style='stroke-width: 0.53; stroke: #A6CEE3; stroke-linecap: butt;' />
+<polyline points='364.66,309.97 368.82,313.82 370.08,308.29 ' style='stroke-width: 0.53; stroke: #A6CEE3; stroke-linecap: butt;' />
+<polyline points='641.92,421.14 642.24,420.10 643.24,418.68 644.37,417.30 645.65,415.96 647.06,414.64 648.60,413.36 650.27,412.11 652.06,410.90 653.97,409.72 656.00,408.57 658.15,407.45 660.40,406.37 662.77,405.31 665.24,404.30 667.81,403.31 670.47,402.36 673.23,401.44 676.09,400.55 679.03,399.70 682.05,398.88 685.16,398.09 688.35,397.33 691.61,396.61 694.94,395.92 698.33,395.26 701.80,394.64 705.32,394.05 708.90,393.49 712.54,392.96 716.23,392.47 719.97,392.01 723.75,391.58 727.57,391.19 731.43,390.83 735.33,390.50 739.25,390.20 743.21,389.94 747.19,389.71 751.19,389.51 755.21,389.35 759.25,389.22 763.29,389.12 767.35,389.05 771.41,389.02 775.47,389.02 779.53,389.05 783.58,389.12 787.63,389.22 791.67,389.35 795.69,389.51 799.69,389.71 803.67,389.94 807.62,390.20 811.55,390.50 815.45,390.83 819.31,391.19 823.13,391.58 826.91,392.01 830.65,392.47 834.34,392.96 837.97,393.49 841.56,394.05 845.08,394.64 848.54,395.26 851.94,395.92 855.27,396.61 858.53,397.33 861.72,398.09 864.82,398.88 867.85,399.70 870.79,400.55 873.64,401.44 876.41,402.36 879.07,403.31 881.64,404.30 884.11,405.31 886.48,406.37 888.73,407.45 890.88,408.57 892.91,409.72 894.82,410.90 896.61,412.11 898.28,413.36 899.82,414.64 901.23,415.96 902.51,417.30 903.64,418.68 904.64,420.10 904.96,421.14 ' style='stroke-width: 0.53; stroke: #1F78B4; stroke-linecap: butt;' />
+<polyline points='900.80,417.28 904.96,421.14 906.22,415.61 ' style='stroke-width: 0.53; stroke: #1F78B4; stroke-linecap: butt;' />
+<text transform='translate(239.35,277.04) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='151.99px' lengthAdjust='spacingAndGlyphs'>express intent to meet or negotiate</text>
+<text transform='translate(775.54,370.91) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='70.06px' lengthAdjust='spacingAndGlyphs'>make statement</text>
+<text transform='translate(775.51,378.59) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='35.02px' lengthAdjust='spacingAndGlyphs'>demand</text>
+<text x='103.27' y='165.12' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #A6CEE3; font-family: Liberation Sans;' textLength='62.65px' lengthAdjust='spacingAndGlyphs'>Botswana</text>
+<text x='639.40' y='272.43' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #1F78B4; font-family: Liberation Sans;' textLength='81.29px' lengthAdjust='spacingAndGlyphs'>Mozambique</text>
+<text x='907.47' y='272.43' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #B2DF8A; font-family: Liberation Sans;' textLength='56.04px' lengthAdjust='spacingAndGlyphs'>Tanzania</text>
+<text x='371.34' y='165.12' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #33A02C; font-family: Liberation Sans;' textLength='47.50px' lengthAdjust='spacingAndGlyphs'>Zambia</text>
+</g>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+</g>
+</svg>

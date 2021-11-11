@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1008.00pt' height='432.00pt' viewBox='0 0 1008.00 432.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw'>
+    <rect x='0.00' y='0.00' width='1008.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<rect x='0.00' y='0.00' width='1008.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMi43NHwxMDA4LjAwfDAuMDB8NDExLjI0'>
+    <rect x='2.74' y='0.00' width='1005.26' height='411.24' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMi43NHwxMDA4LjAwfDAuMDB8NDExLjI0)'>
+<circle cx='170.28' cy='329.00' r='1.42' style='stroke-width: 0.71; stroke: #A6CEE3; fill: #A6CEE3;' />
+<circle cx='840.46' cy='329.00' r='1.42' style='stroke-width: 0.71; stroke: #1F78B4; fill: #1F78B4;' />
+<polyline points='838.89,337.36 838.65,338.67 837.26,341.76 835.50,344.78 833.37,347.73 830.88,350.62 828.04,353.44 824.85,356.19 821.32,358.87 817.47,361.49 813.30,364.04 808.82,366.53 804.04,368.95 798.96,371.29 793.60,373.58 787.96,375.79 782.05,377.94 775.88,380.02 769.45,382.04 762.79,383.98 755.88,385.86 748.75,387.68 741.40,389.42 733.83,391.10 726.06,392.71 718.10,394.26 709.96,395.73 701.63,397.14 693.13,398.49 684.48,399.76 675.66,400.97 666.71,402.11 657.62,403.18 648.39,404.19 639.05,405.13 629.60,406.00 620.04,406.81 610.39,407.55 600.65,408.22 590.83,408.82 580.94,409.36 570.99,409.83 560.99,410.23 550.94,410.57 540.85,410.84 530.73,411.04 520.60,411.17 510.45,411.24 500.29,411.24 490.14,411.17 480.01,411.04 469.89,410.84 459.80,410.57 449.75,410.23 439.75,409.83 429.80,409.36 419.91,408.82 410.09,408.22 400.35,407.55 390.70,406.81 381.14,406.00 371.69,405.13 362.35,404.19 353.12,403.18 344.03,402.11 335.08,400.97 326.26,399.76 317.61,398.49 309.11,397.14 300.78,395.73 292.64,394.26 284.67,392.71 276.91,391.10 269.34,389.42 261.99,387.68 254.86,385.86 247.95,383.98 241.29,382.04 234.86,380.02 228.69,377.94 222.78,375.79 217.14,373.58 211.78,371.29 206.70,368.95 201.92,366.53 197.44,364.04 193.27,361.49 189.42,358.87 185.89,356.19 182.70,353.44 179.86,350.62 177.37,347.73 175.24,344.78 173.48,341.76 172.09,338.67 171.85,337.36 ' style='stroke-width: 0.53; stroke: #1F78B4; stroke-linecap: butt;' />
+<polyline points='175.54,341.66 171.85,337.36 169.96,342.71 ' style='stroke-width: 0.53; stroke: #1F78B4; stroke-linecap: butt;' />
+<text transform='translate(500.31,406.58) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='117.98px' lengthAdjust='spacingAndGlyphs'>express intent to cooperate</text>
+<text x='170.28' y='4.15' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #A6CEE3; font-family: Liberation Sans;' textLength='54.56px' lengthAdjust='spacingAndGlyphs'>Hungary</text>
+<text x='840.46' y='4.15' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #1F78B4; font-family: Liberation Sans;' textLength='81.59px' lengthAdjust='spacingAndGlyphs'>Soviet Union</text>
+</g>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<text x='1008.00' y='430.14' text-anchor='end' style='font-size: 9.00px; font-style: italic; font-family: Liberation Sans Narrow;' textLength='156.74px' lengthAdjust='spacingAndGlyphs'>Note: Showing only dyadic events with top actor</text>
+</g>
+</svg>

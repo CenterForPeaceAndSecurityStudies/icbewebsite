@@ -20,7 +20,7 @@ source('/mnt/8tb_a/rwd_github_private/icbe/docs/maps.r')
 
 
 
-Back to [Main Page](/icbe/index.html).    
+Back to [Main Page](/index.html).    
 View Crises 
 [1-15](ICBe_Website_Cases_1to15.html);
 [16-31](ICBe_Website_Cases_16to31.html);
@@ -58,7 +58,7 @@ View Crises
 
 for(i in 208:223 ) { 
   
-  map(i, fromscratch=FALSE)
+  map(i, fromscratch=TRUE)
 
 }
 

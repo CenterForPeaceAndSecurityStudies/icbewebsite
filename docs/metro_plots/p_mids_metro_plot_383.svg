@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1008.00pt' height='432.00pt' viewBox='0 0 1008.00 432.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw'>
+    <rect x='0.00' y='0.00' width='1008.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<rect x='0.00' y='0.00' width='1008.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMi43NHwxMDA4LjAwfDAuMDB8NDI5LjI2'>
+    <rect x='2.74' y='0.00' width='1005.26' height='429.26' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMi43NHwxMDA4LjAwfDAuMDB8NDI5LjI2)'>
+<circle cx='83.16' cy='276.94' r='1.42' style='stroke-width: 0.71; stroke: #A6CEE3; fill: #A6CEE3;' />
+<circle cx='887.37' cy='276.94' r='1.42' style='stroke-width: 0.71; stroke: #1F78B4; fill: #1F78B4;' />
+<polyline points='88.25,270.13 89.11,268.98 91.66,267.48 94.65,266.03 98.07,264.60 101.89,263.21 106.12,261.86 110.74,260.53 115.74,259.24 121.12,257.99 126.86,256.77 132.95,255.58 139.39,254.43 146.16,253.31 153.25,252.23 160.65,251.17 168.36,250.16 176.37,249.17 184.65,248.22 193.21,247.31 202.03,246.43 211.11,245.58 220.43,244.77 229.98,243.99 239.76,243.24 249.75,242.53 259.95,241.85 270.34,241.21 280.91,240.60 291.66,240.02 302.57,239.48 313.64,238.97 324.85,238.49 336.19,238.05 347.66,237.65 359.24,237.27 370.93,236.93 382.71,236.63 394.58,236.36 406.52,236.12 418.52,235.92 430.58,235.75 442.69,235.61 454.83,235.51 466.99,235.44 479.17,235.41 491.36,235.41 503.54,235.44 515.70,235.51 527.84,235.61 539.95,235.75 552.01,235.92 564.01,236.12 575.95,236.36 587.82,236.63 599.60,236.93 611.29,237.27 622.87,237.65 634.34,238.05 645.68,238.49 656.89,238.97 667.96,239.48 678.87,240.02 689.62,240.60 700.19,241.21 710.58,241.85 720.78,242.53 730.77,243.24 740.54,243.99 750.10,244.77 759.42,245.58 768.50,246.43 777.32,247.31 785.88,248.22 794.16,249.17 802.17,250.16 809.87,251.17 817.28,252.23 824.37,253.31 831.14,254.43 837.58,255.58 843.67,256.77 849.41,257.99 854.79,259.24 859.79,260.53 864.41,261.86 868.64,263.21 872.46,264.60 875.88,266.03 878.87,267.48 881.42,268.98 882.28,270.13 ' style='stroke-width: 0.53; stroke: #A6CEE3; stroke-linecap: butt;' />
+<polyline points='877.07,267.89 882.28,270.13 881.62,264.50 ' style='stroke-width: 0.53; stroke: #A6CEE3; stroke-linecap: butt;' />
+<polyline points='882.28,283.76 881.42,284.91 878.87,286.41 875.88,287.86 872.46,289.29 868.64,290.68 864.41,292.03 859.79,293.36 854.79,294.64 849.41,295.90 843.67,297.12 837.58,298.31 831.14,299.46 824.37,300.58 817.28,301.66 809.87,302.72 802.17,303.73 794.16,304.72 785.88,305.67 777.32,306.58 768.50,307.46 759.42,308.31 750.10,309.12 740.54,309.90 730.77,310.65 720.78,311.36 710.58,312.04 700.19,312.68 689.62,313.29 678.87,313.87 667.96,314.41 656.89,314.92 645.68,315.40 634.34,315.84 622.87,316.24 611.29,316.62 599.60,316.96 587.82,317.26 575.95,317.53 564.01,317.77 552.01,317.97 539.95,318.14 527.84,318.28 515.70,318.38 503.54,318.45 491.36,318.48 479.17,318.48 466.99,318.45 454.83,318.38 442.69,318.28 430.58,318.14 418.52,317.97 406.52,317.77 394.58,317.53 382.71,317.26 370.93,316.96 359.24,316.62 347.66,316.24 336.19,315.84 324.85,315.40 313.64,314.92 302.57,314.41 291.66,313.87 280.91,313.29 270.34,312.68 259.95,312.04 249.75,311.36 239.76,310.65 229.98,309.90 220.43,309.12 211.11,308.31 202.03,307.46 193.21,306.58 184.65,305.67 176.37,304.72 168.36,303.73 160.65,302.72 153.25,301.66 146.16,300.58 139.39,299.46 132.95,298.31 126.86,297.12 121.12,295.90 115.74,294.64 110.74,293.36 106.12,292.03 101.89,290.68 98.07,289.29 94.65,287.86 91.66,286.41 89.11,284.91 88.25,283.76 ' style='stroke-width: 0.53; stroke: #1F78B4; stroke-linecap: butt;' />
+<polyline points='93.46,286.00 88.25,283.76 88.91,289.39 ' style='stroke-width: 0.53; stroke: #1F78B4; stroke-linecap: butt;' />
+<text transform='translate(491.38,217.30) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='58.93px' lengthAdjust='spacingAndGlyphs'>fortify border </text>
+<text transform='translate(491.37,224.98) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='42.77px' lengthAdjust='spacingAndGlyphs'>stalemate</text>
+<text transform='translate(479.20,300.37) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='10.63px' lengthAdjust='spacingAndGlyphs'>na</text>
+<text transform='translate(479.19,308.06) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='42.77px' lengthAdjust='spacingAndGlyphs'>stalemate</text>
+<text x='83.16' y='114.93' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #A6CEE3; font-family: Liberation Sans;' textLength='61.73px' lengthAdjust='spacingAndGlyphs'>Honduras</text>
+<text x='887.37' y='114.93' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #1F78B4; font-family: Liberation Sans;' textLength='65.04px' lengthAdjust='spacingAndGlyphs'>Nicaragua</text>
+</g>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+</g>
+</svg>
