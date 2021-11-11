@@ -3,6 +3,7 @@ title: 'ICBe Crises 80-95'
 output:
   html_notebook:
     toc: yes
+    self_contained: no
 ---
 
 <style>

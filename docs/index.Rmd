@@ -16,7 +16,7 @@ library(tidyverse)
 
 
 ```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
-fromscratch=T
+fromscratch=F
 library(glue)
 n <- 476
 chunk <- function(x,n) split(x, factor(sort(rank(x)%%n)))
@@ -35,6 +35,7 @@ title: 'ICBe Crises {|df$V1[i]|}-{|df$V2[i]|}'
 output:
   html_notebook:
     toc: yes
+    self_contained: no
 ---
 
 <style>
@@ -76,7 +77,8 @@ writeLines(text, df$filenames_rmd[i])
 ```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
 for(i in 1:nrow(df)){
   print(i)
-  rmarkdown::render(df$filenames_rmd[i], "html_document", quiet=T)
+  #rmarkdown::render(df$filenames_rmd[i], "html_document", quiet=T)
+  knit2html(df$filenames_rmd[i],  quiet=T, options=c("use_xhtml","smartypants","mathjax","highlight_code")) 
 }
 ```
 
