@@ -52,13 +52,6 @@ map <- function(i, fromscratch=T){
       plot_height <- p_metro_plot$sentence_count
       p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
       p_height=max(p_metro_plot$sentence_count/2,6)
-      #ggsave(save_file_png,
-      #       plot=p_metro_plot + theme(plot.margin=unit(c(0,0,0,0),"in"))+
-      #         scale_x_continuous(expand = expansion(add = c(50, 50))) +
-      #         scale_y_continuous(expand = expansion(add = c(50, 50))), #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
-      #       width =p_width , height =p_height
-      #       #dpi = 1200
-      #)
       svglite(save_file_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
               width =p_width , height =p_height
               #dpi = 1200
@@ -98,14 +91,6 @@ map <- function(i, fromscratch=T){
         plot_icb_height <- p_icb_metro_plot$sentence_count
         p_width=max(length(p_icb_metro_plot$actor_colors)*1.5,14)
         p_height=min(max(p_icb_metro_plot$sentence_count/2,6),12) #cap it at 49 inches long
-        #ggsave(save_file_icb_png,
-        #       plot=p_icb_metro_plot +
-        #         theme(plot.margin=unit(c(0,0,0,0),"in"))+
-        #         scale_x_continuous(expand = expansion(add = c(10,15))) +
-        #         scale_y_continuous(expand = expansion(add = c(100, 100))), #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
-        #       width =p_width , height =p_height
-        #       #dpi = 1200
-        #)
         svglite(save_file_icb_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
                 width =p_width , height =p_height
                 #dpi = 1200
@@ -122,9 +107,9 @@ map <- function(i, fromscratch=T){
       #cat('</details>')
     }
 
+    #Phoenix
     save_file_phoenix_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_phoenix_metro_plot_",crisis,".Rds")
     save_file_phoenix_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_phoenix_metro_plot_",crisis,".svg")
-    #Phoenix
     if(file.exists(save_file_phoenix_p)){
       #cat('<details><summary>Phoenix Crisis Map</summary>')
       cat('\n\n### Phoenix Crisis Map\n\n')
@@ -153,12 +138,40 @@ map <- function(i, fromscratch=T){
       #cat('</details>')
     }
 
+    #terrier
+    save_file_terrier_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_terrier_metro_plot_",crisis,".Rds")
+    save_file_terrier_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_terrier_metro_plot_",crisis,".svg")
+    if(file.exists(save_file_terrier_p)){
+      cat('\n\n### Terrier Crisis Map\n\n')
+      if(T){
+        p_metro_plot <- readRDS(save_file_terrier_p)
+        plot_icews_height <- p_metro_plot$sentence_count
+        p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+        p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
+        vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
+        horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
+        svglite(save_file_terrier_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+                width =p_width , height =p_height
+                #dpi = 1200
+        )
+        plot(
+          p_metro_plot +
+            theme(plot.margin=unit(c(0,0,0,0),"in")) +
+            scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
+            scale_y_continuous(expand = expansion(add = c(0, vertical_offset*4   ) ) )
+        )
+        invisible(dev.off())
+
+      }
+      show_plot(save_file_terrier_png)
+    }
+
+    #ICEWS
     save_file_icews_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_icews_metro_plot_",crisis,".Rds")
     save_file_icews_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_icews_metro_plot_",crisis,".svg")
-    #ICEWS
     if(file.exists(save_file_icews_p)){
       cat('\n\n### ICEWS Crisis Map\n\n')
-      if(T){
+      if(fromscratch){
         p_icews_metro_plot <- readRDS(save_file_icews_p)
         plot_icews_height <- p_icews_metro_plot$sentence_count
         p_width=max(length(p_icews_metro_plot$actor_colors)*1.5,14)
@@ -213,7 +226,7 @@ map <- function(i, fromscratch=T){
     save_file_mids_incidents_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_mids_incidents_metro_plot_",crisis,".svg")
     if(file.exists(save_file_mids_incidents_p)){
       cat('\n\n### MIDs Incidents Crisis Map\n\n')
-      if(T){
+      if(fromscratch){
         p_metro_plot <- readRDS(save_file_mids_incidents_p)
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
         p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
@@ -234,6 +247,35 @@ map <- function(i, fromscratch=T){
       show_plot(save_file_mids_incidents_png)
       #cat('</details>')
     }
+
+
+    #UCDP-GED Incidents
+    save_file_ucdp_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_ucdp_metro_plot_",crisis,".Rds")
+    save_file_ucdp_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_ucdp_metro_plot_",crisis,".svg")
+    if(file.exists(save_file_ucdp_p)){
+      cat('\n\n### UCDP-GED Crisis Map\n\n')
+      if(fromscratch){
+        p_metro_plot <- readRDS(save_file_ucdp_p)
+        p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+        p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
+        vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
+        horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
+        svglite(save_file_ucdp_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+                width =p_width , height =p_height
+                #dpi = 1200
+        )
+        plot(
+          p_metro_plot +
+            theme(plot.margin=unit(c(0,0,0,0),"in")) +
+            scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
+            scale_y_continuous(expand = expansion(add = c(0, vertical_offset*1   ) ) )
+        )
+        invisible(dev.off())
+      }
+      show_plot(save_file_ucdp_png)
+      #cat('</details>')
+    }
+
 
     wikipedia_links <- conflict_data_long_singlecode_icb %>% filter(crisno==crisis) %>% pull(wiki_en_link)
     if(length(wikipedia_links)>0 ){

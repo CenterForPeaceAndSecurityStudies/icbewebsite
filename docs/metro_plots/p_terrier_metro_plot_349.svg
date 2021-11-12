@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1008.00pt' height='432.00pt' viewBox='0 0 1008.00 432.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw'>
+    <rect x='0.00' y='0.00' width='1008.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<rect x='0.00' y='0.00' width='1008.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMi43NHwxMDA4LjAwfDAuMDB8NDI5LjI2'>
+    <rect x='2.74' y='0.00' width='1005.26' height='429.26' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMi43NHwxMDA4LjAwfDAuMDB8NDI5LjI2)'>
+<circle cx='170.28' cy='429.26' r='1.42' style='stroke-width: 0.71; stroke: #A6CEE3; fill: #A6CEE3;' />
+<circle cx='840.46' cy='429.26' r='1.42' style='stroke-width: 0.71; stroke: #1F78B4; fill: #1F78B4;' />
+<polyline points='171.09,420.79 171.09,420.76 172.09,416.65 173.48,412.62 175.24,408.68 177.37,404.82 179.86,401.05 182.70,397.38 185.89,393.78 189.42,390.28 193.27,386.86 197.44,383.54 201.92,380.29 206.70,377.14 211.78,374.08 217.14,371.10 222.78,368.21 228.69,365.40 234.86,362.69 241.29,360.06 247.95,357.52 254.86,355.07 261.99,352.70 269.34,350.42 276.91,348.23 284.67,346.13 292.64,344.12 300.78,342.19 309.11,340.35 317.61,338.60 326.26,336.93 335.08,335.36 344.03,333.87 353.12,332.47 362.35,331.15 371.69,329.93 381.14,328.79 390.70,327.74 400.35,326.77 410.09,325.90 419.91,325.11 429.80,324.41 439.75,323.80 449.75,323.27 459.80,322.83 469.89,322.48 480.01,322.22 490.14,322.04 500.29,321.96 510.45,321.96 520.60,322.04 530.73,322.22 540.85,322.48 550.94,322.83 560.99,323.27 570.99,323.80 580.94,324.41 590.83,325.11 600.65,325.90 610.39,326.77 620.04,327.74 629.60,328.79 639.05,329.93 648.39,331.15 657.62,332.47 666.71,333.87 675.66,335.36 684.48,336.93 693.13,338.60 701.63,340.35 709.96,342.19 718.10,344.12 726.06,346.13 733.83,348.23 741.40,350.42 748.75,352.70 755.88,355.07 762.79,357.52 769.45,360.06 775.88,362.69 782.05,365.40 787.96,368.21 793.60,371.10 798.96,374.08 804.04,377.14 808.82,380.29 813.30,383.54 817.47,386.86 821.32,390.28 824.85,393.78 828.04,397.38 830.88,401.05 833.37,404.82 835.50,408.68 837.26,412.62 838.65,416.65 839.65,420.76 839.65,420.79 ' style='stroke-width: 0.53; stroke: #A6CEE3; stroke-linecap: butt;' />
+<polyline points='836.36,416.18 839.65,420.79 842.01,415.64 ' style='stroke-width: 0.53; stroke: #A6CEE3; stroke-linecap: butt;' />
+<text transform='translate(510.52,303.85) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='30.89px' lengthAdjust='spacingAndGlyphs'>consult</text>
+<text transform='translate(510.49,311.53) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='154.75px' lengthAdjust='spacingAndGlyphs'>reduce or break diplomatic relations</text>
+<text x='170.28' y='4.15' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #A6CEE3; font-family: Liberation Sans;' textLength='44.85px' lengthAdjust='spacingAndGlyphs'>Greece</text>
+<text x='840.46' y='4.15' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #1F78B4; font-family: Liberation Sans;' textLength='42.62px' lengthAdjust='spacingAndGlyphs'>Turkey</text>
+</g>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+</g>
+</svg>
