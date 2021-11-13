@@ -71,6 +71,7 @@ map <- function(crisis, fromscratch=T){
     cat(' \n \n')
     #cat('</details>')
 
+    #These are huge,
     #cat('<details><summary>ICBe Narrative</summary>')
     cat('##### Narrative and Codings\n\n')
       cat('\n[Report Table Problem](',table_problem,'){target="_blank"}')
@@ -274,12 +275,12 @@ map <- function(crisis, fromscratch=T){
       #cat('</details>')
     }
 
-
-    wikipedia_links <- conflict_data_long_singlecode_icb %>% filter(crisno==crisis) %>% pull(wiki_en_link)
-    if(length(wikipedia_links)>0 ){
-      cat('\n\n#### Wikipedia Page \n\n')
-      cat(glue('<iframe src="',{wikipedia_links[1]},'" loading="lazy" height="800" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external="1"></iframe>'))
-    }
+    #skip wikipedia temporarily
+    #wikipedia_links <- conflict_data_long_singlecode_icb %>% filter(crisno==crisis) %>% pull(wiki_en_link)
+    #if(length(wikipedia_links)>0 ){
+    #  cat('\n\n#### Wikipedia Page \n\n')
+    #  cat(glue('<iframe src="',{wikipedia_links[1]},'" loading="lazy" height="800" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external="1"></iframe>'))
+    #}
 
     #cat("\n\n### {-}\n\n")
     #cat("\n\n## {-}\n\n")
