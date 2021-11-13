@@ -28,6 +28,7 @@ library(tidyverse)
 icb_crises <-readRDS(paste0(here::here(), "/docs/icb1v14.Rds") )
 
 icb_crises$decade <- floor(icb_crises$yrtrig/10)*10
+icb_crises$decade_5 <- icb_crises$decade  + (icb_crises$yrtrig %% 10 > 5)*5
 
 fromscratch=F
 library(glue)
@@ -49,7 +50,7 @@ Back to [Main Page](/index.html).
 
 cat('\n\n# {.tabset .tabset-fade .tabset-pills}\n\n') #Start tabs for decades
 
-for(d in na.omit(unique(icb_crises$decade))){ #for debuging can limit it to just 2 decades #[1:2]
+for(d in na.omit(unique(icb_crises$decade_5))){ #for debuging can limit it to just 2 decades #[1:2]
   
   cat('\n\n## ', d , ' {.tabset .tabset-fade .tabset-pills}\n\n') #Start tab for cases
   
