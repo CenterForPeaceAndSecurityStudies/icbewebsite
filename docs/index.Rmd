@@ -1,5 +1,5 @@
 ---
-title: 'ICBe Crises by Decade'
+title: 'CrisisEvents.org'
 output:
   html_document:
     toc: no
@@ -56,7 +56,7 @@ for(d in na.omit(unique(icb_crises$decade))){ #for debuging can limit it to just
   for(crisis in icb_crises %>% filter(decade %in% d) %>% pull(crisno) ) { 
     map(crisis, fromscratch=F)
   }
-  cat('\n\n## {-}\n\n') #Close tab for cases
+  #cat('\n\n## {-}\n\n') #Close tab for cases
   
 }
 cat('\n\n# {-}\n\n') #Close tab for decades
