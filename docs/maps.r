@@ -64,7 +64,7 @@ map <- function(crisis, fromscratch=T){
 
     }
 
-    cat('\n\n##### ICBe\n\n')
+    cat('\n\n##### ICBe {.tabset} \n\n')
     cat('\n\n###### Crisis Map\n\n')
     #cat('<details open><summary>ICBE Crisis Map</summary>')
     cat('\n[Report Plot Problem](',plot_problem,'){target="_blank"}')
