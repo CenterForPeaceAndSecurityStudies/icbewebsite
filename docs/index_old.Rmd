@@ -1,0 +1,100 @@
+---
+title: "ICBe (alpha website do not circulate)"
+output: html_notebook
+---
+
+
+```{r setup, include=FALSE, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+
+#On how to reset the repo to save space
+#https://github.com/18F/C2/issues/439
+
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+icb_crises <-readRDS(paste0(here::here(), "/docs/icb1v14.Rds") )
+
+
+rmarkdown::render('/mnt/8tb_a/rwd_github_private/icbe/docs/crises_by_decade.Rmd', "html_document", quiet=T)
+
+```
+
+
+```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+fromscratch=F
+library(glue)
+n <- 476
+chunk <- function(x,n) split(x, factor(sort(rank(x)%%n)))
+chunks <- chunk(1:n,30)
+
+df <- sapply(chunks, range) %>% t() %>% as.data.frame() %>%
+  mutate(filenames_html = glue("ICBe_Website_Cases_{V1}to{V2}.html")) %>%
+  mutate(filenames_rmd = glue("/mnt/8tb_a/rwd_github_private/icbe/docs/ICBe_Website_Cases_{V1}to{V2}.rmd")) %>%
+  mutate(link = glue("[{V1}-{V2}](ICBe_Website_Cases_{V1}to{V2}.html);"))
+
+for(i in 1:nrow(df)){
+  
+text <- glue(.open='{|', .close='|}',
+"---
+title: 'ICBe Crises {|df$V1[i]|}-{|df$V2[i]|}'
+output:
+  html_document:
+    toc: no
+    self_contained: no
+    lib_dir: 'lib'
+---
+
+<style>
+    body .main-container {
+        max-width: 1500px;
+    }
+</style>
+
+
+\`\`\`{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+source('/mnt/8tb_a/rwd_github_private/icbe/docs/maps.r')
+\`\`\`
+
+
+
+Back to [Main Page](/index.html).    
+View Crises 
+{|df$link %>% paste0(collapse='\n')|}
+
+
+\`\`\`{r, eval=T, echo=F, results='asis', include=T, message=F, cache=F, warning=F}
+cat('\n\n# {.tabset .tabset-fade .tabset-pills}\n\n') #Outside the for loop, fill it with cases
+for(i in {|df$V1[i]|}:{|df$V2[i]|} ) { 
+  map(i, fromscratch={|fromscratch|})
+}
+cat('\n\n# {-}\n\n') #we close the tabset outside
+\`\`\`
+")
+
+writeLines(text, df$filenames_rmd[i])
+
+}
+
+
+```
+
+```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+library(knitr)
+for(i in 1:nrow(df)){
+  print(i)
+  rmarkdown::render(df$filenames_rmd[i], "html_document", quiet=T)
+  #knit2html(df$filenames_rmd[i],  quiet=T, options=c("use_xhtml","smartypants","mathjax","highlight_code")) 
+}
+```
+
+
+If you spot a bug in the plots or codings please file an issue ticket on the [repo](https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/)
+
+View Crises: 
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+glue(
+"
+{df$link %>% paste0(collapse='\n')}
+"
+)
+```
