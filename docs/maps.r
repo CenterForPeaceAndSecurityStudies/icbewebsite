@@ -42,7 +42,7 @@ map <- function(crisis, fromscratch=T){
   if(file.exists(save_file_p)){
     ft_full_case <- readRDS(save_file_ft)
     #cat(sprintf(template, section))
-    if( crisis==196){ cat("\n\n#### ",section,"  {.active .tabset}\n\n") } else {
+    if( crisis==196){ cat("\n\n#### ",section,"  {.active .tabset .tabset-fade .tabset-pills }\n\n") } else {
       cat("\n\n#### ",section,"  {.tabset .tabset-fade .tabset-pills }\n\n")
     }
 
