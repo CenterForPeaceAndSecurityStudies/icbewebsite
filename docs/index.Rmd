@@ -54,7 +54,7 @@ for(d in na.omit(unique(icb_crises$decade_5))){ #for debuging can limit it to ju
   
   cat('\n\n## ', d , ' {.tabset .tabset-fade .tabset-pills}\n\n') #Start tab for cases
   
-  for(crisis in icb_crises %>% filter(decade %in% d) %>% pull(crisno) ) { 
+  for(crisis in icb_crises %>% filter(decade_5 %in% d) %>% pull(crisno) ) { 
     map(crisis, fromscratch=F)
   }
   #cat('\n\n## {-}\n\n') #Close tab for cases
