@@ -42,7 +42,9 @@ map <- function(crisis, fromscratch=T){
   if(file.exists(save_file_p)){
     ft_full_case <- readRDS(save_file_ft)
     #cat(sprintf(template, section))
-    cat("\n\n### ",section,"  {.tabset}\n\n") #show crisis name and open tab for sources
+    if( crisis==196){ cat("\n\n#### ",section,"  {.active .tabset}\n\n") } else {
+      cat("\n\n#### ",section,"  {.tabset}\n\n")
+    }
 
     if(fromscratch){
       p_metro_plot <- readRDS(save_file_p)
@@ -62,8 +64,8 @@ map <- function(crisis, fromscratch=T){
 
     }
 
-    cat('\n\n#### ICBe\n\n')
-    cat('\n\n##### Crisis Map\n\n')
+    cat('\n\n##### ICBe\n\n')
+    cat('\n\n###### Crisis Map\n\n')
     #cat('<details open><summary>ICBE Crisis Map</summary>')
     cat('\n[Report Plot Problem](',plot_problem,'){target="_blank"}')
     cat(' \n \n')
@@ -73,7 +75,7 @@ map <- function(crisis, fromscratch=T){
 
     #These are huge,
     #cat('<details><summary>ICBe Narrative</summary>')
-    cat('##### Narrative and Codings\n\n')
+    cat('###### Narrative and Codings\n\n')
       cat('\n[Report Table Problem](',table_problem,'){target="_blank"}')
       #ft_full_case %>%
       #  flextable::width(j = 2, width=5, unit = "in") %>%
@@ -83,7 +85,7 @@ map <- function(crisis, fromscratch=T){
 
     #ICB Dyadic
     if(file.exists(save_file_icb_p)){
-      cat('\n\n#### ICB Dyadic Crisis Map\n\n')
+      cat('\n\n##### ICB Dyadic Crisis Map\n\n')
       #cat('<details><summary>ICB Dyadic Crisis Map</summary>')
       if(fromscratch){
         p_icb_metro_plot <- readRDS(save_file_icb_p)
@@ -111,7 +113,7 @@ map <- function(crisis, fromscratch=T){
     save_file_phoenix_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_phoenix_metro_plot_",crisis,".svg")
     if(file.exists(save_file_phoenix_p)){
       #cat('<details><summary>Phoenix Crisis Map</summary>')
-      cat('\n\n#### Phoenix Crisis Map\n\n')
+      cat('\n\n##### Phoenix Crisis Map\n\n')
       if(fromscratch){
         p_phoenix_metro_plot <- readRDS(save_file_phoenix_p)
         plot_phoenix_height <- p_phoenix_metro_plot$sentence_count
@@ -141,8 +143,8 @@ map <- function(crisis, fromscratch=T){
     save_file_terrier_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_terrier_metro_plot_",crisis,".Rds")
     save_file_terrier_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_terrier_metro_plot_",crisis,".svg")
     if(file.exists(save_file_terrier_p)){
-      cat('\n\n#### Terrier Crisis Map\n\n')
-      if(T){
+      cat('\n\n##### Terrier Crisis Map\n\n')
+      if(fromscratch){
         p_metro_plot <- readRDS(save_file_terrier_p)
         plot_icews_height <- p_metro_plot$sentence_count
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
@@ -169,7 +171,7 @@ map <- function(crisis, fromscratch=T){
     save_file_icews_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_icews_metro_plot_",crisis,".Rds")
     save_file_icews_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_icews_metro_plot_",crisis,".svg")
     if(file.exists(save_file_icews_p)){
-      cat('\n\n#### ICEWS Crisis Map\n\n')
+      cat('\n\n##### ICEWS Crisis Map\n\n')
       if(fromscratch){
         p_icews_metro_plot <- readRDS(save_file_icews_p)
         plot_icews_height <- p_icews_metro_plot$sentence_count
@@ -197,7 +199,7 @@ map <- function(crisis, fromscratch=T){
     #Mids
     if(file.exists(save_file_mids_p)){
       #cat('<details><summary>MIDs Crisis Map</summary>')
-      cat('\n\n#### MIDs Crisis Map\n\n')
+      cat('\n\n##### MIDs Crisis Map\n\n')
       if(fromscratch){
         p_mids_metro_plot <- readRDS(save_file_mids_p)
         plot_mids_height <- p_mids_metro_plot$sentence_count
@@ -224,7 +226,7 @@ map <- function(crisis, fromscratch=T){
     save_file_mids_incidents_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_mids_incidents_metro_plot_",crisis,".Rds")
     save_file_mids_incidents_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_mids_incidents_metro_plot_",crisis,".svg")
     if(file.exists(save_file_mids_incidents_p)){
-      cat('\n\n#### MIDs Incidents Crisis Map\n\n')
+      cat('\n\n##### MIDs Incidents Crisis Map\n\n')
       if(fromscratch){
         p_metro_plot <- readRDS(save_file_mids_incidents_p)
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
@@ -252,7 +254,7 @@ map <- function(crisis, fromscratch=T){
     save_file_ucdp_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_ucdp_metro_plot_",crisis,".Rds")
     save_file_ucdp_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_ucdp_metro_plot_",crisis,".svg")
     if(file.exists(save_file_ucdp_p)){
-      cat('\n\n#### UCDP-GED Crisis Map\n\n')
+      cat('\n\n##### UCDP-GED Crisis Map\n\n')
       if(fromscratch){
         p_metro_plot <- readRDS(save_file_ucdp_p)
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
