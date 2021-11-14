@@ -34,7 +34,7 @@ window.twttr = (function(d, s, id) {
 ```
 
 
-Over 10,000 human coded events from 470 pivotal crises in international relations in the new ICBe dataset (International Crises Behavior events). Use this website to visualize the data and compare to pre-existing state of the art event datasets. Read our [introduction to the data paper](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/raw/master/paper/ICBEdataset_paper_rex.pdf) and [download the data for free](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset) for your own work. <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
+Over 10,000 human coded events from 470 pivotal crises in international relations in the new ICBe dataset (International Crises Behavior events). Read our [introduction to the data paper](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset) and [download the data for free](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset), and visualize the data compared to the pre-existing state of the art below. <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@site_username">
@@ -96,7 +96,7 @@ for(d in na.omit(unique(icb_crises$decade))){ #for debuging can limit it to just
     }  
     
     for(crisis in icb_crises %>% filter(yrtrig %in% year) %>% pull(crisno) ) { 
-      map(crisis, fromscratch=F)
+      map(crisis, fromscratch=fromscratch)
     }
   #cat('\n\n## {-}\n\n') #Close tab for cases
   }
