@@ -23,10 +23,12 @@ map <- function(crisis, fromscratch=T){
   i=which(icb_crises$crisno==crisis)
   section <- paste0(icb_crises[i,]$crisname %>% stringr::str_to_title()," (", icb_crises[i,]$yrtrig ,"-",icb_crises[i,]$yrterm,")", " [#", icb_crises[i,]$crisno,"]")
 
-  save_file_ft <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/tables/sentence_tables/ft_sentence_table_",crisis,".Rds") #We pull from the icb paper folder for now
-
   save_file_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_metro_plot_",crisis,".Rds")
   save_file_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_metro_plot_",crisis,".svg")
+
+  save_file_ft <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/tables/sentence_tables/ft_sentence_table_",crisis,".Rds") #We pull from the icb paper folder for now
+  save_file_ft_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/ft_sentence_table_",crisis,".png") #We pull from the icb paper folder for now
+
 
   save_file_mids_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_mids_metro_plot_",crisis,".Rds")
   save_file_mids_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_mids_metro_plot_",crisis,".svg")
@@ -40,7 +42,7 @@ map <- function(crisis, fromscratch=T){
   #We open a tabset in the source file
   #If the case is missing for some reason skip it
   if(file.exists(save_file_p)){
-    ft_full_case <- readRDS(save_file_ft)
+
     #cat(sprintf(template, section))
     if( crisis==196){ cat("\n\n#### ",section,"  {.active .tabset .tabset-fade .tabset-pills }\n\n") } else {
       cat("\n\n#### ",section,"  {.tabset .tabset-fade .tabset-pills }\n\n")
@@ -76,9 +78,19 @@ map <- function(crisis, fromscratch=T){
       #cat('<details><summary>ICBe Narrative</summary>')
       cat('###### Narrative and Codings\n\n')
         cat('\n[Report Table Problem](',table_problem,'){target="_blank"}')
-        #ft_full_case %>%
-        #  flextable::width(j = 2, width=5, unit = "in") %>%
-        #  flextable::width(j = 3, width=5, unit = "in") %>% flextable_to_rmd()
+        if(fromscratch){
+          ft_full_case <- readRDS(save_file_ft)
+          ft_full_case %>%
+          set_header_labels(values = list(id = "ID",
+                                          sentence = "Sentence",
+                                          codings_sentence = "ICBe Codings (Partial)")
+                             ) %>%
+          flextable::width(j = 2, width=5, unit = "in") %>%
+          flextable::width(j = 3, width=5, unit = "in") %>%
+          #flextable_to_rmd()
+          save_as_image( path = save_file_ft_png)
+        }
+        show_plot(save_file_ft_png)
         cat(' \n \n')
         #cat('</details>')
 
@@ -142,7 +154,7 @@ map <- function(crisis, fromscratch=T){
     save_file_terrier_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_terrier_metro_plot_",crisis,".Rds")
     save_file_terrier_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_terrier_metro_plot_",crisis,".svg")
     if(file.exists(save_file_terrier_p)){
-      cat('\n\n##### Terrier Crisis Map\n\n')
+      cat('\n\n##### Terrier \n\n')
       if(fromscratch){
         p_metro_plot <- readRDS(save_file_terrier_p)
         plot_icews_height <- p_metro_plot$sentence_count
@@ -253,7 +265,7 @@ map <- function(crisis, fromscratch=T){
     save_file_ucdp_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_ucdp_metro_plot_",crisis,".Rds")
     save_file_ucdp_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_ucdp_metro_plot_",crisis,".svg")
     if(file.exists(save_file_ucdp_p)){
-      cat('\n\n##### UCDP-GED Crisis Map\n\n')
+      cat('\n\n##### UCDP-GED \n\n')
       if(fromscratch){
         p_metro_plot <- readRDS(save_file_ucdp_p)
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)

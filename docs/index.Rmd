@@ -16,6 +16,9 @@ output:
 
 ```{r setup, include=FALSE, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
 
+#PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+#webshot::install_phantomjs()
+
 source('/mnt/8tb_a/rwd_github_private/icbe/docs/maps.r')
 
 
