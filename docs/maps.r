@@ -260,7 +260,7 @@ map <- function(crisis, fromscratch=T){
     #Mids
     if(file.exists(save_file_mids_p)){
       cat('\n\n##### MIDs \n\n')
-      if(T){
+      if(fromscratch){
         p_metro_plot <- readRDS(save_file_mids_p)
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
         p_height=min(max(p_metro_plot$sentence_count/2,6),12) #cap it at 49 inches long
@@ -297,7 +297,7 @@ map <- function(crisis, fromscratch=T){
     save_file_mids_incidents_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_mids_incidents_metro_plot_",crisis,".svg")
     if(file.exists(save_file_mids_incidents_p)){
       cat('\n\n##### MIDs Incidents \n\n')
-      if(T){
+      if(fromscratch){
         p_metro_plot <- readRDS(save_file_mids_incidents_p)
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
         p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
