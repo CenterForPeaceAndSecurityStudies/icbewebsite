@@ -53,7 +53,7 @@ map <- function(crisis, fromscratch=T){
     }
 
     #ICBe Dyadic Event
-      if(fromscratch){
+      if(T){
         p_metro_plot <- readRDS(save_file_p)
         plot_height <- p_metro_plot$sentence_count
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
