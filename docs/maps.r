@@ -53,7 +53,7 @@ map <- function(crisis, fromscratch=T){
     }
 
     #ICBe Dyadic Event
-      if(T){
+      if(fromscratch){
         p_metro_plot <- readRDS(save_file_p)
         plot_height <- p_metro_plot$sentence_count
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
@@ -82,15 +82,22 @@ map <- function(crisis, fromscratch=T){
 
       }
 
-      cat('\n\n##### ICBe (ours) {.tabset .tabset-fade .tabset-pills} \n\n')
-        cat('\n\n###### Crisis Map\n\n')
+      cat('\n\n##### Dataset: {.tabset .tabset-fade .tabset-pills} \n\n')
+      cat("\n\n Select a Dataset \n\n")
+
+      cat('\n\n##### ICBe (ours) {.tabset .active .tabset-fade .tabset-pills} \n\n')
+
+        cat('\n\n###### View: {.tabset .tabset-fade .tabset-pills} \n\n')
+        cat("\n\n Select a view \n\n")
+
+        cat('\n\n###### Crisis Map {.tabset .active .tabset-fade .tabset-pills} \n\n')
         cat('\n[Report Plot Problem](',plot_problem,'){target="_blank"}')
         cat(' \n \n')
         show_plot(save_file_png)
         cat(' \n \n')
         #cat('</details>')
 
-      cat('###### Crisis Narrative \n\n')
+      cat('###### Crisis Narrative {.tabset .tabset-fade .tabset-pills} \n\n')
         cat('\n[Report Table Problem](',table_problem,'){target="_blank"}')
         cat("\n\n",plot_title)
         if(fromscratch){

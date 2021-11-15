@@ -14,6 +14,7 @@ output:
 </style>
 
 
+
 ```{js, class.source = "jsvis1", echo=F}
 window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
@@ -75,20 +76,28 @@ df <- sapply(chunks, range) %>% t() %>% as.data.frame() %>%
 
 ```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
 
+#cat("Decade\n")
 cat('\n\n# {.tabset .tabset-fade .tabset-pills}\n\n') #Start tabs for decades
-
+cat('\n\n## Decade: {.tabset .tabset-fade .tabset-pills} \n\n')
+cat("\n\n Select a Decade\n\n")
 for(d in na.omit(unique(icb_crises$decade))){ #for debuging can limit it to just 2 decades #[1:2]
   
-  #Start tab for cases
-  if( d==1960){ cat('\n\n## ', d , ' {.active .tabset .tabset-fade .tabset-pills} \n\n') } else {
+  #Start tab for Deacde
+  if( d==1960){ cat('\n\n## ', d , ' {.active .tabset .tabset-fade .tabset-pills}\n\n') } else {
     cat('\n\n## ', d , ' {.tabset .tabset-fade .tabset-pills} \n\n' )  
   }
 
+  #Start tab for Year
+  #cat("Year\n")
+  cat('\n\n### Year: {.tabset .tabset-fade .tabset-pills} \n\n')
+  cat("\n\n Select a Year\n\n")
   for(year in icb_crises %>% filter(decade %in% d) %>% pull(yrtrig) %>% unique() ) {
-    if( year==1962){ cat('\n\n### ', year , ' {.active .tabset .tabset-fade .tabset-pills} \n\n') } else {
-      cat('\n\n### ', year , ' {.tabset .tabset-fade .tabset-pills} \n\n' )  
+    if( year==1962){ cat('\n\n### ', year , ' {.active .tabset .tabset-fade .tabset-pills}\n\n') } else {
+      cat('\n\n### ', year , ' {.tabset .tabset-fade .tabset-pills}\n\n' )  
     }  
-    
+
+    cat('\n\n#### Crisis: {.tabset .tabset-fade .tabset-pills} \n\n')
+    cat("\n\n Select a Crisis \n\n")
     for(crisis in icb_crises %>% filter(yrtrig %in% year) %>% pull(crisno) ) { 
       map(crisis, fromscratch=fromscratch)
     }
