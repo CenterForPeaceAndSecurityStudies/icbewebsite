@@ -35,9 +35,10 @@ window.twttr = (function(d, s, id) {
 ```
 <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
 
-470 pivotal crises in international relations, recorded chess move by chess move in the new ICBe (International Crises Behavior events) dataset ([paper and raw data](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset)).
+Nations compete in chess matches for conquest and survival. A multi-university team of social scientists examined 470 of these crises in detail, recording them move for move (over 10,000 in total).
 
-This website visualizes each chess match - pick a decade, year, and crisis to see for yourself.
+You can browse timelines and read narratives of those crises below - pick a decade, year, and crisis. Compare our contribution, the International Crisis Behavior events dataset (ICBe), to the previous state of the art, and then read the [paper and download the data](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset) for yourself.
+
 
 ```{r setup, include=FALSE, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
 
