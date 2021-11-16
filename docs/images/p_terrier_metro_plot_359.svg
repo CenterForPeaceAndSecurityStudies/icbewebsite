@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1008.00pt' height='432.00pt' viewBox='0 0 1008.00 432.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw'>
+    <rect x='0.00' y='0.00' width='1008.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<rect x='0.00' y='-0.00000000000011' width='1008.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMi43NHwxMDA4LjAwfDUxLjc4fDM5MS44MA=='>
+    <rect x='2.74' y='51.78' width='1005.26' height='340.02' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMi43NHwxMDA4LjAwfDUxLjc4fDM5MS44MA==)'>
+<circle cx='91.44' cy='375.61' r='1.42' style='stroke-width: 0.71; stroke: #A6CEE3; fill: #A6CEE3;' />
+<circle cx='564.50' cy='289.26' r='1.42' style='stroke-width: 0.71; stroke: #1F78B4; fill: #1F78B4;' />
+<circle cx='801.03' cy='289.26' r='1.42' style='stroke-width: 0.71; stroke: #B2DF8A; fill: #B2DF8A;' />
+<circle cx='327.97' cy='375.61' r='1.42' style='stroke-width: 0.71; stroke: #33A02C; fill: #33A02C;' />
+<polyline points='570.92,283.67 571.26,283.37 572.61,282.86 574.09,282.36 575.67,281.87 577.36,281.39 579.15,280.93 581.04,280.48 583.03,280.04 585.12,279.62 587.30,279.21 589.56,278.81 591.92,278.43 594.35,278.06 596.87,277.70 599.47,277.36 602.14,277.03 604.88,276.71 607.69,276.41 610.56,276.12 613.50,275.84 616.50,275.58 619.56,275.33 622.66,275.09 625.83,274.86 629.04,274.65 632.29,274.45 635.59,274.27 638.92,274.10 642.30,273.94 645.70,273.79 649.14,273.66 652.61,273.54 656.10,273.44 659.61,273.34 663.14,273.26 666.69,273.20 670.25,273.14 673.82,273.10 677.39,273.08 680.98,273.07 684.56,273.07 688.14,273.08 691.72,273.10 695.29,273.14 698.85,273.20 702.40,273.26 705.93,273.34 709.44,273.44 712.93,273.54 716.40,273.66 719.83,273.79 723.24,273.94 726.61,274.10 729.95,274.27 733.25,274.45 736.50,274.65 739.71,274.86 742.87,275.09 745.98,275.33 749.04,275.58 752.04,275.84 754.98,276.12 757.85,276.41 760.66,276.71 763.40,277.03 766.07,277.36 768.67,277.70 771.18,278.06 773.62,278.43 775.97,278.81 778.24,279.21 780.42,279.62 782.51,280.04 784.50,280.48 786.39,280.93 788.18,281.39 789.87,281.87 791.45,282.36 792.92,282.86 794.28,283.37 794.62,283.67 ' style='stroke-width: 0.53; stroke: #1F78B4; stroke-linecap: butt;' />
+<polyline points='789.06,282.58 794.62,283.67 792.78,278.31 ' style='stroke-width: 0.53; stroke: #1F78B4; stroke-linecap: butt;' />
+<polyline points='321.56,381.20 321.22,381.49 319.86,382.01 318.39,382.51 316.81,383.00 315.12,383.47 313.33,383.94 311.43,384.39 309.44,384.82 307.36,385.25 305.18,385.66 302.91,386.05 300.56,386.43 298.12,386.81 295.60,387.16 293.01,387.51 290.34,387.84 287.60,388.15 284.79,388.46 281.91,388.75 278.97,389.03 275.97,389.29 272.92,389.54 269.81,389.78 266.65,390.00 263.44,390.21 260.18,390.41 256.89,390.60 253.55,390.77 250.18,390.93 246.77,391.07 243.33,391.21 239.87,391.33 236.38,391.43 232.87,391.52 229.33,391.60 225.79,391.67 222.23,391.72 218.66,391.76 215.08,391.79 211.50,391.80 207.91,391.80 204.33,391.79 200.75,391.76 197.18,391.72 193.62,391.67 190.08,391.60 186.54,391.52 183.03,391.43 179.54,391.33 176.08,391.21 172.64,391.07 169.23,390.93 165.86,390.77 162.52,390.60 159.23,390.41 155.97,390.21 152.76,390.00 149.60,389.78 146.49,389.54 143.44,389.29 140.44,389.03 137.50,388.75 134.62,388.46 131.81,388.15 129.07,387.84 126.40,387.51 123.81,387.16 121.29,386.81 118.85,386.43 116.50,386.05 114.23,385.66 112.05,385.25 109.97,384.82 107.98,384.39 106.08,383.94 104.29,383.47 102.60,383.00 101.02,382.51 99.55,382.01 98.19,381.49 97.85,381.20 ' style='stroke-width: 0.53; stroke: #33A02C; stroke-linecap: butt;' />
+<polyline points='103.42,382.28 97.85,381.20 99.69,386.56 ' style='stroke-width: 0.53; stroke: #33A02C; stroke-linecap: butt;' />
+<text transform='translate(684.62,241.51) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='132.24px' lengthAdjust='spacingAndGlyphs'>use conventional military force</text>
+<text transform='translate(684.60,249.19) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='116.83px' lengthAdjust='spacingAndGlyphs'>make pessimistic comment</text>
+<text transform='translate(684.59,256.88) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='24.23px' lengthAdjust='spacingAndGlyphs'>reject</text>
+<text transform='translate(207.92,387.14) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='51.65px' lengthAdjust='spacingAndGlyphs'>make a visit</text>
+<text x='919.30' y='293.40' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #BEBEBE; font-family: Liberation Sans;' textLength='60.29px' lengthAdjust='spacingAndGlyphs'>1985-Dec</text>
+<text x='919.30' y='379.76' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #BEBEBE; font-family: Liberation Sans;' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>1986-Jan</text>
+<text x='91.44' y='314.99' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #A6CEE3; font-family: Liberation Sans;' textLength='62.65px' lengthAdjust='spacingAndGlyphs'>Botswana</text>
+<text x='564.50' y='228.64' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #1F78B4; font-family: Liberation Sans;' textLength='82.94px' lengthAdjust='spacingAndGlyphs'>Burkina Faso</text>
+<text x='801.03' y='228.64' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #B2DF8A; font-family: Liberation Sans;' textLength='26.80px' lengthAdjust='spacingAndGlyphs'>Mali</text>
+<text x='327.97' y='314.99' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #33A02C; font-family: Liberation Sans;' textLength='79.29px' lengthAdjust='spacingAndGlyphs'>South Africa</text>
+</g>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<text x='2.74' y='34.34' style='font-size: 12.00px; font-family: Liberation Sans Narrow;' textLength='93.54px' lengthAdjust='spacingAndGlyphs'>Terrier Dyadic Events</text>
+<text x='2.74' y='12.38' style='font-size: 18.00px; font-weight: bold; font-family: Liberation Sans Narrow;' textLength='272.55px' lengthAdjust='spacingAndGlyphs'>BURKINA FASO/MALI BDR (1985-1986)</text>
+<text x='1008.00' y='410.70' text-anchor='end' style='font-size: 9.00px; font-style: italic; font-family: Liberation Sans Narrow;' textLength='155.49px' lengthAdjust='spacingAndGlyphs'>Source: CrisisEvents.org (Douglass et al. 2021)</text>
+<text x='1008.00' y='420.42' text-anchor='end' style='font-size: 9.00px; font-style: italic; font-family: Liberation Sans Narrow;' textLength='402.44px' lengthAdjust='spacingAndGlyphs'>                     Data: TERRIER (Temporally Extended, Regular, Reproducible International Event Records) (Liang et al. 2018)</text>
+<text x='1008.00' y='430.14' text-anchor='end' style='font-size: 9.00px; font-style: italic; font-family: Liberation Sans Narrow;' textLength='43.09px' lengthAdjust='spacingAndGlyphs'>                     </text>
+</g>
+</svg>

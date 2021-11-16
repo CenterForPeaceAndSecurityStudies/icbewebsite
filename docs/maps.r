@@ -13,7 +13,7 @@ conflict_data_long_singlecode_icb <- readRDS("/mnt/8tb_a/rwd_github_private/icbe
 
 crises <- icb_crises$crisno %>% unique()
 show_plot <- function(x){
-  plot_path <- paste0('metro_plots/',basename(x))
+  plot_path <- paste0('images/',basename(x))
   cat(sep="",
       '\n\n<img src="',plot_path,'" loading="lazy" >\n\n'
       )
@@ -29,16 +29,16 @@ map <- function(crisis, fromscratch=T){
   section <- paste0(icb_crises[i,]$crisname %>% stringr::str_to_title()," (", icb_crises[i,]$yrtrig ,"-",icb_crises[i,]$yrterm,")", " [#", icb_crises[i,]$crisno,"]")
 
   save_file_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_metro_plot_",crisis,".Rds")
-  save_file_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_metro_plot_",crisis,".svg")
+  save_file_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/images//p_metro_plot_",crisis,".svg")
 
   save_file_ft <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/tables/sentence_tables/ft_sentence_table_",crisis,".Rds") #We pull from the icb paper folder for now
-  save_file_ft_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/ft_sentence_table_",crisis,".png") #We pull from the icb paper folder for now
+  save_file_ft_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/images//ft_sentence_table_",crisis,".png") #We pull from the icb paper folder for now
 
   save_file_mids_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_mids_metro_plot_",crisis,".Rds")
-  save_file_mids_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_mids_metro_plot_",crisis,".svg")
+  save_file_mids_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/images//p_mids_metro_plot_",crisis,".svg")
 
   save_file_icb_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_icb_metro_plot_",crisis,".Rds")
-  save_file_icb_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_icb_metro_plot_",crisis,".svg")
+  save_file_icb_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/images//p_icb_metro_plot_",crisis,".svg")
 
   plot_problem <- paste0('https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/new?assignees=&labels=&template=bug_report.md&title=Crisis+%23+',i,'+Plot+%28Problem Here%29')
   table_problem <- paste0('https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/new?assignees=&labels=&template=bug_report.md&title=Crisis+%23+',i,'+Table+%28Sentence %23s Here%29++%28Problem Here%29')
@@ -152,7 +152,7 @@ map <- function(crisis, fromscratch=T){
 
     #Phoenix
     save_file_phoenix_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_phoenix_metro_plot_",crisis,".Rds")
-    save_file_phoenix_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_phoenix_metro_plot_",crisis,".svg")
+    save_file_phoenix_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/images//p_phoenix_metro_plot_",crisis,".svg")
     if(file.exists(save_file_phoenix_p)){
 
       cat('\n\n##### Phoenix \n\n')
@@ -192,7 +192,7 @@ map <- function(crisis, fromscratch=T){
 
     #terrier
     save_file_terrier_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_terrier_metro_plot_",crisis,".Rds")
-    save_file_terrier_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_terrier_metro_plot_",crisis,".svg")
+    save_file_terrier_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/images//p_terrier_metro_plot_",crisis,".svg")
     if(file.exists(save_file_terrier_p)){
       cat('\n\n##### Terrier \n\n')
       if(fromscratch){
@@ -229,7 +229,7 @@ map <- function(crisis, fromscratch=T){
 
     #ICEWS
     save_file_icews_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_icews_metro_plot_",crisis,".Rds")
-    save_file_icews_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_icews_metro_plot_",crisis,".svg")
+    save_file_icews_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/images//p_icews_metro_plot_",crisis,".svg")
     if(file.exists(save_file_icews_p)){
       cat('\n\n##### ICEWS \n\n')
       if(fromscratch){
@@ -301,7 +301,7 @@ map <- function(crisis, fromscratch=T){
 
     #Mids Incidents
     save_file_mids_incidents_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_mids_incidents_metro_plot_",crisis,".Rds")
-    save_file_mids_incidents_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_mids_incidents_metro_plot_",crisis,".svg")
+    save_file_mids_incidents_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/images//p_mids_incidents_metro_plot_",crisis,".svg")
     if(file.exists(save_file_mids_incidents_p)){
       cat('\n\n##### MIDs Incidents \n\n')
       if(fromscratch){
@@ -338,7 +338,7 @@ map <- function(crisis, fromscratch=T){
 
     #UCDP-GED Incidents
     save_file_ucdp_p <- paste0("/mnt/8tb_a/rwd_github_private/ICBEdataset/paper/figures/metro_plots/p_ucdp_metro_plot_",crisis,".Rds")
-    save_file_ucdp_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/metro_plots/p_ucdp_metro_plot_",crisis,".svg")
+    save_file_ucdp_png <- paste0("/mnt/8tb_a/rwd_github_private/icbe/docs/images//p_ucdp_metro_plot_",crisis,".svg")
     if(file.exists(save_file_ucdp_p)){
       cat('\n\n##### UCDP-GED \n\n')
       if(fromscratch){

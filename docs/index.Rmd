@@ -35,12 +35,14 @@ window.twttr = (function(d, s, id) {
 ```
 <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
 
-Nations compete in chess matches for conquest and survival. A multi-university team of social scientists examined 470 of these crises in detail, recording them move for move (over 10,000 in total).
+Nations compete in chess matches for conquest and survival. A multi-university team of social scientists examined 476 international crises in detail, recording over 10,000 moves and counter moves.
 
 You can browse timelines and read narratives of those crises below - pick a decade, year, and crisis. Compare our contribution, the International Crisis Behavior events dataset (ICBe), to the previous state of the art, and then read the [paper and download the data](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset) for yourself.
 
 
 ```{r setup, include=FALSE, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+
+fromscratch=T
 
 #PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 #webshot::install_phantomjs()
@@ -59,7 +61,7 @@ icb_crises <-readRDS(paste0(here::here(), "/docs/icb1v14.Rds") )
 icb_crises$decade <- floor(icb_crises$yrtrig/10)*10
 icb_crises$decade_5 <- icb_crises$decade  + (icb_crises$yrtrig %% 10 > 5)*5
 
-fromscratch=F
+
 library(glue)
 n <- 476
 chunk <- function(x,n) split(x, factor(sort(rank(x)%%n)))
@@ -83,7 +85,7 @@ cat('\n\n## Decade: {.tabset .tabset-fade .tabset-pills} \n\n')
 cat("\n\n Select a Decade\n\n")
 for(d in na.omit(unique(icb_crises$decade))){ #for debuging can limit it to just 2 decades #[1:2]
   
-  #Start tab for Deacde
+  #Start tab for Decade
   if( d==1960){ cat('\n\n## ', d , ' {.active .tabset .tabset-fade .tabset-pills}\n\n') } else {
     cat('\n\n## ', d , ' {.tabset .tabset-fade .tabset-pills} \n\n' )  
   }
@@ -92,15 +94,20 @@ for(d in na.omit(unique(icb_crises$decade))){ #for debuging can limit it to just
   #cat("Year\n")
   cat('\n\n### Year: {.tabset .tabset-fade .tabset-pills} \n\n')
   cat("\n\n Select a Year\n\n")
-  for(year in icb_crises %>% filter(decade %in% d) %>% pull(yrtrig) %>% unique() ) {
-    if( year==1962){ cat('\n\n### ', year , ' {.active .tabset .tabset-fade .tabset-pills}\n\n') } else {
+  years = icb_crises %>% filter(decade %in% d) %>% pull(yrtrig) %>% unique()
+  for(year in years) {
+    if( (d==1960 & year==1962) | (d!=1960 & year==min(years) )){
+      cat('\n\n### ', year , ' {.active .tabset .tabset-fade .tabset-pills}\n\n') } else {
       cat('\n\n### ', year , ' {.tabset .tabset-fade .tabset-pills}\n\n' )  
     }  
 
     cat('\n\n#### Crisis: {.tabset .tabset-fade .tabset-pills} \n\n')
     cat("\n\n Select a Crisis \n\n")
     for(crisis in icb_crises %>% filter(yrtrig %in% year) %>% pull(crisno) ) { 
-      map(crisis, fromscratch=fromscratch)
+      #if(crisis==397){next} #397 is currently broken
+      try({
+        map(crisis, fromscratch=fromscratch)
+      })
     }
   #cat('\n\n## {-}\n\n') #Close tab for cases
   }
