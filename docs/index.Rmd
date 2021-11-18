@@ -1,5 +1,5 @@
 ---
-title: 'CrisisEvents.org - High Quality International Relations Event Data'
+title: "CrisisEvents.org - High Quality International Relations Event Data (alpha, don't circulate)"
 output:
   html_document:
     toc: no
@@ -39,7 +39,7 @@ window.twttr = (function(d, s, id) {
   return t;
 }(document, "script", "twitter-wjs"));
 ```
-<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=New%20Social%20Science%20Dataset%20Alert!" hashtags="DataScience,BigData,politicalscience" >Tweet</a>
+<!-- <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=New%20Social%20Science%20Dataset%20Alert!" hashtags="DataScience,BigData,politicalscience" >Tweet</a> -->
 
 Nations compete in chess matches for conquest and survival. A multi-university team of social scientists examined 476 international crises in detail, recording over 10,000 moves and counter moves.
 
@@ -47,7 +47,7 @@ You can browse timelines and read narratives of those crises below - pick a deca
 
 
 ```{r setup, include=FALSE, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
-fromscratch=F
+fromscratch=T
 
 
 #PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.

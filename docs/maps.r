@@ -159,7 +159,7 @@ map <- function(crisis, fromscratch=T){
       if(fromscratch){
         p_metro_plot <- readRDS(save_file_phoenix_p)
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
-        p_height=min(max( (p_metro_plot$data$y %>% unique() %>% length()) /2,6),40) #cap it at 30 inches long
+        p_height=min(max( (p_metro_plot$data$y %>% unique() %>% length()) /2,6),80) #cap it at 30 inches long
         vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
         horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
 
@@ -199,7 +199,7 @@ map <- function(crisis, fromscratch=T){
         p_metro_plot <- readRDS(save_file_terrier_p)
         plot_icews_height <- p_metro_plot$sentence_count
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
-        p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
+        p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),80) #cap it at 60 inches long
         vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
         horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
         svglite(save_file_terrier_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
@@ -235,7 +235,7 @@ map <- function(crisis, fromscratch=T){
       if(fromscratch){
         p_metro_plot <- readRDS(save_file_icews_p)
         p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
-        p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
+        p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),80) #cap it at 60 inches long
         vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
         horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
         svglite(save_file_icews_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
