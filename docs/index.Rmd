@@ -7,6 +7,16 @@ output:
     lib_dir: 'lib'
 ---
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7F5V7F8W1K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7F5V7F8W1K');
+</script>
+
 <style>
     body .main-container {
         max-width: 1500px;
@@ -47,7 +57,7 @@ You can browse timelines and read narratives of those crises below - pick a deca
 
 
 ```{r setup, include=FALSE, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
-fromscratch=T
+fromscratch=F
 
 
 #PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
