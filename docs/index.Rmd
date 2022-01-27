@@ -1,5 +1,5 @@
 ---
-title: "CrisisEvents.org - High Quality International Relations Event Data (alpha, don't circulate)"
+title: "CrisisEvents.org - High Quality International Relations Event Data"
 output:
   html_document:
     toc: no
@@ -17,11 +17,13 @@ output:
   gtag('config', 'G-7F5V7F8W1K');
 </script>
 
+
 <style>
     body .main-container {
         max-width: 1500px;
     }
 </style>
+
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@site_username">
