@@ -101,7 +101,7 @@ print(tweet)
 
 ICBe is a new high quality event dataset covering 475 international crises from 1918 to 2015.
 
-ICBe was developed by the [Center for Peace and Security Studies](https://cpass.ucsd.edu/) at the University of California San Diego, with support from the University of Maryland, and the corresponding author is [Rex W. Douglass](https://rexdouglass.com/) [@RexDouglass](https://twitter.com/RexDouglass).
+ICBe was developed by the [Center for Peace and Security Studies](https://cpass.ucsd.edu/) at the University of California San Diego, with support from the University of Maryland, and the corresponding author is [Rex W. Douglass](https://rexdouglass.com/) (@[RexDouglass](https://twitter.com/RexDouglass)).
 
 Read our introductory paper:
 
