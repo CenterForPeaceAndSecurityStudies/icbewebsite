@@ -25,13 +25,14 @@ library(urltools); #install.packages('urltools')
 
 text <- '\U1F6A8New Dataset Alert\U1F6A8
 
-Want to understand international crisis\U003F
+CrisisEvents.Org
 
-International Crisis Behaviors Events project (ICBe)
-www.CrisisEvents.Org
+The first high coverage, recall, and precision international conflict data
 
+International Crisis Behaviors Events (ICBe)
 475 Crises (1918-2015)
-10k Human Coded Events
+117+ behaviors
+10k+ Human Coded Events
 
 @Cpassucsd @RexDouglass'
 Encoding(text) = "UTF-8"

@@ -79,9 +79,10 @@ library(tidyverse)
 library(urltools); #install.packages('urltools')
 
 text <- '\U1F6A8New Dataset Alert\U1F6A8
+
 CrisisEvents.Org
 
-The first high coverage, high recall, and high precision international conflict event dataset.
+The first high coverage, recall, and precision international conflict data
 
 International Crisis Behaviors Events (ICBe)
 475 Crises (1918-2015)
