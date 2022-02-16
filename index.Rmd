@@ -99,7 +99,7 @@ print(tweet)
 
 ```
 
-ICBe is a new, free, high quality event dataset of over ten thousand events spanning 475 international crises from 1918 to 2015
+ICBe is a new, free, high quality event dataset of over ten thousand events spanning 475 international crises from 1918 to 2015.
 
 ICBe was developed by the [Center for Peace and Security Studies](https://cpass.ucsd.edu/) at the University of California San Diego, with support from the University of Maryland, and the corresponding author is [Rex W. Douglass](https://rexdouglass.com/).
 
@@ -107,11 +107,15 @@ Read our introductory paper:
 
 > "[Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises.](http://arxiv.org/abs/2202.07081)" Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wiklenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge. 2022. arXiv:2202.07081.
 
+<br>
+
 ## What is an international crisis?
 
 A crisis, like the Cuban Missile Crisis, is "a change in the type or an increase in the intensity of disruptive interaction with a heightened probability of military hostilities that destabilizes states' relationships or challenges the structure of the international system" (Brecher and Wilkenfeld 1982).
 
 Our project is based on the amazing corpus of crisis narratives written by the [ICB project](http://www.icb.umd.edu/dataviewer/).
+
+<br>
 
 ## What are event data good for?
 
@@ -119,23 +123,31 @@ Event data let us describe and compare moments in history more easily.
 
 For example, we can produce detailed timelines called crisis-maps. Here's an example of a map of the Cuban Missile Crisis with instructions for how to interpret each part.
 
-![](DemonstrationCrisisMap.svg)
+<p style="text-align:center;"><img src="DemonstrationCrisisMap.svg" width="75%" /></p>
+
+<br>
 
 ## How does ICBe improve over the state of the art?
 
 ICBe is the first high coverage, high recall, and high precision event dataset of international relations.
 
-1. ICBE has very high coverage over the kinds of behaviors found in international relations.
+1. ICBE has very high coverage over the kinds of behaviors found in international relations (117+ kinds of behaviors).
 
-<p style="text-align:center;"><img src="LitReview.png" /></p>
+<p style="text-align:center;"><img src="LitReview.png" width="75%" /></p>
 
-2. ICBe has very high recall over the important events and turning points in crisis. Compare for yourself crisis-maps produced by ICBe versus each of the existing state of the art datasets.
+<br>
 
-<p style="text-align:center;"><img src="CompetingExample.svg" /></p>
+2. ICBe has very high recall, the important events are likely to have been captured. Compare for yourself crisis-maps produced by ICBe versus each of the existing state of the art datasets.
+
+<p style="text-align:center;"><img src="CompetingExample.svg" width="75%" /></p>
+
+<br>
 
 3. ICBe has very high precision, the events that it codes are likely to have occured as described. Compare codings along with the original historical narratives.
 
-<p style="text-align:center;"><img src="ReadOriginalNarrative.svg" /></p>
+<p style="text-align:center;"><img src="ReadOriginalNarrative.svg" width="75%" /></p>
+
+<br>
 
 ## Where should I start?
 
@@ -145,6 +157,6 @@ ICBe is the first high coverage, high recall, and high precision event dataset o
 
 3.  [Download the data](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/) and use it downstream in your own projects.
 
-4.  Share on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.
+4.  [Share](https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0AWant%20to%20understand%20international%20crises?%0A%0AInternational%20Crisis%20Behaviors%20Events%20project%20(ICBe)%0ACrisisEvents.Org%0A%0A475%20Crises%20(1918-2015)%0A10k%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass) on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.
 
 5.  Find bugs! Every crisis has direct links that will auto-start a github issue ticket so you can quickly tell us if you found a problem.
