@@ -83,7 +83,7 @@ text <- '\U1F6A8New Dataset Alert\U1F6A8
 Want to understand international crises?
 
 International Crisis Behaviors Events project (ICBe)
-www.CrisisEvents.Org
+CrisisEvents.Org
 
 475 Crises (1918-2015)
 10k Human Coded Events
