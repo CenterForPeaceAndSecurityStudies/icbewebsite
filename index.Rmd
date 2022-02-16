@@ -157,6 +157,6 @@ ICBe is the first high coverage, high recall, and high precision event dataset o
 
 3.  [Download the data](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/) and use it downstream in your own projects.
 
-4.  [Share](https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0AWant%20to%20understand%20international%20crises?%0A%0AInternational%20Crisis%20Behaviors%20Events%20project%20(ICBe)%0ACrisisEvents.Org%0A%0A475%20Crises%20(1918-2015)%0A10k%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass) on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.
+4.  [Share](https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0ACrisisEvents.Org%0A%0AThe%20first%20high%20coverage,%20recall,%20and%20precision%20international%20conflict%20data%0A%0AInternational%20Crisis%20Behaviors%20Events%20(ICBe)%0A475%20Crises%20(1918-2015)%0A117+%20behaviors%0A10k+%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass) on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.
 
 5.  Find bugs! Every crisis has direct links that will auto-start a github issue ticket so you can quickly tell us if you found a problem.
