@@ -82,7 +82,7 @@ text <- '\U1F6A8New Dataset Alert\U1F6A8
 
 CrisisEvents.Org
 
-The first high coverage, recall, and precision international conflict data
+The first high coverage, recall, and precision international event database
 
 International Crisis Behaviors Events (ICBe)
 475 Crises (1918-2015)
@@ -99,9 +99,9 @@ print(tweet)
 
 ```
 
-ICBe is a new, free, high quality event dataset of over ten thousand events spanning 475 international crises from 1918 to 2015.
+ICBe is a new high quality event dataset covering 475 international crises from 1918 to 2015.
 
-ICBe was developed by the [Center for Peace and Security Studies](https://cpass.ucsd.edu/) at the University of California San Diego, with support from the University of Maryland, and the corresponding author is [Rex W. Douglass](https://rexdouglass.com/).
+ICBe was developed by the [Center for Peace and Security Studies](https://cpass.ucsd.edu/) at the University of California San Diego, with support from the University of Maryland, and the corresponding author is [Rex W. Douglass](https://rexdouglass.com/) [@RexDouglass](https://twitter.com/RexDouglass).
 
 Read our introductory paper:
 
@@ -113,7 +113,7 @@ Read our introductory paper:
 
 A crisis, like the Cuban Missile Crisis, is "a change in the type or an increase in the intensity of disruptive interaction with a heightened probability of military hostilities that destabilizes states' relationships or challenges the structure of the international system" (Brecher and Wilkenfeld 1982).
 
-Our project is based on the amazing corpus of crisis narratives written by the [ICB project](http://www.icb.umd.edu/dataviewer/).
+Our project is based on the amazing corpus of crisis summaries written by the [ICB project](http://www.icb.umd.edu/dataviewer/).
 
 <br>
 
@@ -131,7 +131,7 @@ For example, we can produce detailed timelines called crisis-maps. Here's an exa
 
 ICBe is the first high coverage, high recall, and high precision event dataset of international relations.
 
-1. ICBE has very high coverage over the kinds of behaviors found in international relations (117+ kinds of behaviors).
+1. ICBe has very high coverage over the kinds of behaviors found in international relations (117+ kinds of behaviors).
 
 <p style="text-align:center;"><img src="LitReview.png" width="75%" /></p>
 
@@ -158,5 +158,3 @@ ICBe is the first high coverage, high recall, and high precision event dataset o
 3.  [Download the data](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/) and use it downstream in your own projects.
 
 4.  [Share](https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0ACrisisEvents.Org%0A%0AThe%20first%20high%20coverage,%20recall,%20and%20precision%20international%20conflict%20data%0A%0AInternational%20Crisis%20Behaviors%20Events%20(ICBe)%0A475%20Crises%20(1918-2015)%0A117+%20behaviors%0A10k+%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass) on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.
-
-5.  Find bugs! Every crisis has direct links that will auto-start a github issue ticket so you can quickly tell us if you found a problem.
