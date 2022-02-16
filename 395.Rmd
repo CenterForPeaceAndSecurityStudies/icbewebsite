@@ -26,7 +26,29 @@ window.twttr = (function(d, s, id) {
   return t;
 }(document, "script", "twitter-wjs"));
 ```
-<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=New%20Social%20Science%20Dataset%20Alert!" hashtags="DataScience,BigData,politicalscience" >Tweet</a>
+
+
+```{r, results='asis', echo=FALSE, warnings=F, message=F, echo=F, warnings=F}
+library(tidyverse)
+library(urltools); #install.packages('urltools')
+
+text <- '\U1F6A8New Dataset Alert\U1F6A8
+
+International Crisis Behaviors Events project (ICBe)
+www.CrisisEvents.Org
+
+475 Crises (1918-2015)
+10k Human Coded Events
+
+@Cpassucsd @RexDouglass'
+Encoding(text) = "UTF-8"
+text_encoded <- text %>% URLencode()
+
+tweet <- glue::glue('<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={text_encoded}">Share</a>\'')
+
+print(tweet)
+
+```
 
 ```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
 library(flextable)
@@ -213,10 +235,10 @@ if(file.exists(save_file_icb_p)){
 ```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
 
 #Phoenix
-if(file.exists(save_file_phoenix_p) | !file.exists(save_file_phoenix_png) ){
+if(file.exists(save_file_phoenix_p) ){
 
   cat('\n\n##### Phoenix \n\n')
-  if(fromscratch){
+  if(fromscratch | !file.exists(save_file_phoenix_png) ){
     p_metro_plot <- readRDS(save_file_phoenix_p)
     p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
     p_height=min(max( (p_metro_plot$data$y %>% unique() %>% length()) /2,6),80) #cap it at 30 inches long

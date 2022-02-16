@@ -79,14 +79,14 @@ library(tidyverse)
 library(urltools); #install.packages('urltools')
 
 text <- '\U1F6A8New Dataset Alert\U1F6A8
-
-Want to understand international crises?
-
-International Crisis Behaviors Events project (ICBe)
 CrisisEvents.Org
 
+The first high coverage, high recall, and high precision international conflict event dataset.
+
+International Crisis Behaviors Events (ICBe)
 475 Crises (1918-2015)
-10k Human Coded Events
+117+ behaviors
+10k+ Human Coded Events
 
 @Cpassucsd @RexDouglass'
 Encoding(text) = "UTF-8"
@@ -97,14 +97,14 @@ tweet <- glue::glue('<a class="twitter-share-button" href="https://twitter.com/i
 print(tweet)
 
 ```
-  
+
 ICBe is a new, free, high quality event dataset of over ten thousand events spanning 475 international crises from 1918 to 2015
 
 ICBe was developed by the [Center for Peace and Security Studies](https://cpass.ucsd.edu/) at the University of California San Diego with support from the University of Maryland.
 
 Read our introductory paper:
 
-> “[Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises](https://arxiv.org/abs/2202.07081),” Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wiklenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge, 2022.
+> "[Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises.](http://arxiv.org/abs/2202.07081)" Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wiklenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge. 2022. arXiv:2202.07081.
 
 ## What is an international crisis?
 
@@ -120,24 +120,30 @@ For example, we can produce detailed timelines called crisis-maps. Here's an exa
 
 ![](DemonstrationCrisisMap.svg)
 
-## How is ICBe better than the state of the art?
+## How does ICBe improve over the state of the art?
 
-ICBe is the first high recall AND high precision event dataset of international relations.
+ICBe is the first high coverage, high recall, and high precision event dataset of international relations.
 
-The paper provides detailed evaluations, but we suggest you simply compare for yourself crisis-maps produced by ICBe versus each of the existing state of the art datasets.
+1. ICBE has very high coverage over the kinds of behaviors found in international relations.
 
-![](CompetingExample.svg)
+<p style="text-align:center;"><img src="LitReview.png" /></p>
 
-And compare each crisis-map to the original historical narratives.
+2. ICBe has very high recall over the important events and turning points in crisis. Compare for yourself crisis-maps produced by ICBe versus each of the existing state of the art datasets.
 
-![](ReadOriginalNarrative.svg)
+<p style="text-align:center;"><img src="CompetingExample.svg" /></p>
+
+3. ICBe has very high precision, the events that it codes are likely to have occured as described. Compare codings along with the original historical narratives.
+
+<p style="text-align:center;"><img src="ReadOriginalNarrative.svg" /></p>
 
 ## Where should I start?
 
-1.  [Browse](browse.html) the crises. Every single datum of the project is visualized.
+1.  [Browse](browse.html) the crises.
 
-2.  Download the data and use it downstream in your own projects. All that we ask is you cite our introductory note.
+2.  Read the [paper](http://arxiv.org/abs/2202.07081).
 
-3.  Spread word of this resource by sharing a crisis on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.
+3.  [Download the data](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/) and use it downstream in your own projects.
 
-4.  Find bugs! All code has bugs. Every crisis has direct links that will auto-start a github issue ticket so you can quickly tell us if you found a problem.
+4.  Share on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.
+
+5.  Find bugs! Every crisis has direct links that will auto-start a github issue ticket so you can quickly tell us if you found a problem.

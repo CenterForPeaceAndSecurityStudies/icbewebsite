@@ -288,12 +288,12 @@ window.twttr = (function(d, s, id) {
 }(document, "script", "twitter-wjs"));
 
 </script>
-<p><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0AWant%20to%20understand%20international%20crises?%0A%0AInternational%20Crisis%20Behaviors%20Events%20project%20(ICBe)%0ACrisisEvents.Org%0A%0A475%20Crises%20(1918-2015)%0A10k%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass">Share</a>’</p>
+<p><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0ACrisisEvents.Org%0A%0AThe%20first%20high%20coverage,%20high%20recall,%20and%20high%20precision%20international%20conflict%20event%20dataset.%0A%0AInternational%20Crisis%20Behaviors%20Events%20(ICBe)%0A475%20Crises%20(1918-2015)%0A117+%20behaviors%0A10k+%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass">Share</a>’</p>
 <p>ICBe is a new, free, high quality event dataset of over ten thousand events spanning 475 international crises from 1918 to 2015</p>
 <p>ICBe was developed by the <a href="https://cpass.ucsd.edu/">Center for Peace and Security Studies</a> at the University of California San Diego with support from the University of Maryland.</p>
 <p>Read our introductory paper:</p>
 <blockquote>
-<p>“<a href="https://arxiv.org/abs/2202.07081">Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises</a>,” Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wiklenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge, 2022.</p>
+<p>“<a href="http://arxiv.org/abs/2202.07081">Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises.</a>” Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wiklenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge. 2022. arXiv:2202.07081.</p>
 </blockquote>
 <div id="what-is-an-international-crisis" class="section level2">
 <h2>What is an international crisis?</h2>
@@ -306,21 +306,36 @@ window.twttr = (function(d, s, id) {
 <p>For example, we can produce detailed timelines called crisis-maps. Here’s an example of a map of the Cuban Missile Crisis with instructions for how to interpret each part.</p>
 <p><img src="DemonstrationCrisisMap.svg" /></p>
 </div>
-<div id="how-is-icbe-better-than-the-state-of-the-art" class="section level2">
-<h2>How is ICBe better than the state of the art?</h2>
-<p>ICBe is the first high recall AND high precision event dataset of international relations.</p>
-<p>The paper provides detailed evaluations, but we suggest you simply compare for yourself crisis-maps produced by ICBe versus each of the existing state of the art datasets.</p>
-<p><img src="CompetingExample.svg" /></p>
-<p>And compare each crisis-map to the original historical narratives.</p>
-<p><img src="ReadOriginalNarrative.svg" /></p>
+<div id="how-does-icbe-improve-over-the-state-of-the-art" class="section level2">
+<h2>How does ICBe improve over the state of the art?</h2>
+<p>ICBe is the first high coverage, high recall, and high precision event dataset of international relations.</p>
+<ol style="list-style-type: decimal">
+<li>ICBE has very high coverage over the kinds of behaviors found in international relations.</li>
+</ol>
+<p style="text-align:center;">
+<img src="LitReview.png" />
+</p>
+<ol start="2" style="list-style-type: decimal">
+<li>ICBe has very high recall over the important events and turning points in crisis. Compare for yourself crisis-maps produced by ICBe versus each of the existing state of the art datasets.</li>
+</ol>
+<p style="text-align:center;">
+<img src="CompetingExample.svg" />
+</p>
+<ol start="3" style="list-style-type: decimal">
+<li>ICBe has very high precision, the events that it codes are likely to have occured as described. Compare codings along with the original historical narratives.</li>
+</ol>
+<p style="text-align:center;">
+<img src="ReadOriginalNarrative.svg" />
+</p>
 </div>
 <div id="where-should-i-start" class="section level2">
 <h2>Where should I start?</h2>
 <ol style="list-style-type: decimal">
-<li><p><a href="browse.html">Browse</a> the crises. Every single datum of the project is visualized.</p></li>
-<li><p>Download the data and use it downstream in your own projects. All that we ask is you cite our introductory note.</p></li>
-<li><p>Spread word of this resource by sharing a crisis on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.</p></li>
-<li><p>Find bugs! All code has bugs. Every crisis has direct links that will auto-start a github issue ticket so you can quickly tell us if you found a problem.</p></li>
+<li><p><a href="browse.html">Browse</a> the crises.</p></li>
+<li><p>Read the <a href="http://arxiv.org/abs/2202.07081">paper</a>.</p></li>
+<li><p><a href="https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/">Download the data</a> and use it downstream in your own projects.</p></li>
+<li><p>Share on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.</p></li>
+<li><p>Find bugs! Every crisis has direct links that will auto-start a github issue ticket so you can quickly tell us if you found a problem.</p></li>
 </ol>
 </div>
 
