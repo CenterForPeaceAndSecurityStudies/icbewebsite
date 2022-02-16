@@ -1,0 +1,446 @@
+---
+title: "Kaluchak (2002-2002) [#436]"
+output: html_document
+---
+
+```{r, echo=F}
+fromscratch=F
+crisis = 436
+```
+
+```{js, class.source = "jsvis1", echo=F}
+window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+```
+<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=New%20Social%20Science%20Dataset%20Alert!" hashtags="DataScience,BigData,politicalscience" >Tweet</a>
+
+```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+library(flextable)
+library(tidyverse)
+library(googlesheets4)
+
+library(tidyverse)
+library(ggraph)
+#library(edgebundle)
+library(igraph)
+library(stringr)
+library(svglite)
+#icb_crises <-readRDS(paste0(here::here(), "/data_in/icb1v14.Rds") )
+icb_crises <-read_csv(paste0(here::here(), "/data_in/icb1v14.csv") )
+#conflict_data_long_singlecode_icb <- readRDS("/mnt/8tb_a/rwd_github_private/icbe/conflict_data_long_singlecode_icb.rds") %>% separate(dataset_identifier, c("a", "b"), sep='_') %>% mutate(crisno=b %>% as.numeric())
+
+crises <- icb_crises$crisno %>% unique()
+show_plot <- function(x){
+  plot_path <- paste0('website_images/',basename(x))
+  #plot_path <- paste0(here::here(), "/images/",basename(x)) #this has to be just images
+  cat(sep="",
+      '\n\n<img src="',plot_path,'" loading="lazy" >\n\n'
+      )
+}
+
+```
+
+```{r, echo=F, results='hide',  include=T, message=F, cache=F, warning=F}
+  #print(here::here())
+  i=which(icb_crises$crisno==crisis)
+  plot_title <- icb_crises %>%
+                filter(crisno==crisis) %>%
+                #mutate(title="Crisis #" %>% paste0(crisno, " ", crisname, " (", yrtrig, "-",yrterm,")")) %>%
+                mutate(title= crisname %>% paste0( " (", yrtrig, "-",yrterm,")")) %>%
+                pull(title)
+
+  save_file_p <- paste0(here::here(), "//images/ggplots/p_metro_plot_",crisis,".Rds") #This one has to be pulled back one level because it gets nuked every time you 
+  save_file_png <- paste0(here::here(), "/images/website_images/p_metro_plot_",crisis,".svg") #And then you have to recreate those images every time uhg
+
+  save_file_ft <- paste0(here::here(),"//images/tables/sentence_tables/ft_sentence_table_",crisis,".Rds") 
+  save_file_ft_png <- paste0(here::here(), "/images/website_images/ft_sentence_table_",crisis,".png") #
+
+  save_file_mids_p <- paste0(here::here(), "//images/ggplots/p_mids_metro_plot_",crisis,".Rds")
+  save_file_mids_png <- paste0(here::here(), "/images/website_images/p_mids_metro_plot_",crisis,".svg")
+
+  save_file_icb_p <- paste0(here::here(), "//images/ggplots/p_icb_metro_plot_",crisis,".Rds")
+  save_file_icb_png <- paste0(here::here(), "/images/website_images/p_icb_metro_plot_",crisis,".svg")
+
+  save_file_phoenix_p <- paste0(here::here(), "//images/ggplots/p_phoenix_metro_plot_",crisis,".Rds")
+  save_file_phoenix_png <- paste0(here::here(), "/images/website_images/p_phoenix_metro_plot_",crisis,".svg")
+
+  save_file_ucdp_p <- paste0(here::here(), "//images/ggplots/p_ucdp_metro_plot_",crisis,".Rds")
+  save_file_ucdp_png <- paste0(here::here(), "/images/website_images/p_ucdp_metro_plot_",crisis,".svg")
+
+  save_file_terrier_p <- paste0(here::here(), "///images/ggplots/p_terrier_metro_plot_",crisis,".Rds")
+  save_file_terrier_png <- paste0(here::here(), "/images/website_images/p_terrier_metro_plot_",crisis,".svg")
+  
+  save_file_icews_p <- paste0(here::here(), "//images/ggplots/p_icews_metro_plot_",crisis,".Rds")
+  save_file_icews_png <- paste0(here::here(), "/images/website_images/p_icews_metro_plot_",crisis,".svg")
+  
+  save_file_mids_incidents_p <- paste0(here::here(), "//images/ggplots/p_mids_incidents_metro_plot_",crisis,".Rds")
+  save_file_mids_incidents_png <- paste0(here::here(), "/images/website_images/p_mids_incidents_metro_plot_",crisis,".svg")
+
+  plot_problem <- paste0('https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/new?assignees=&labels=&template=bug_report.md&title=Crisis+%23+',i,'+Plot+%28Problem Here%29')
+  table_problem <- paste0('https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/new?assignees=&labels=&template=bug_report.md&title=Crisis+%23+',i,'+Table+%28Sentence %23s Here%29++%28Problem Here%29')
+
+```
+  
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+
+section <- paste0(icb_crises[i,]$crisname %>% stringr::str_to_title()," (", icb_crises[i,]$yrtrig ,"-",icb_crises[i,]$yrterm,")", " [#", icb_crises[i,]$crisno,"]")
+#cat("\n\n#### ",section,"  {.tabset .tabset-fade .tabset-pills }\n\n")
+cat("\n\n#### Choose Summary to View  {.tabset .tabset-fade .tabset-pills }\n\n")
+
+#if(file.exists(save_file_p))
+
+#ICBe Dyadic Event
+if(fromscratch | !file.exists(save_file_png )){
+  p_metro_plot <- readRDS(save_file_p)
+  plot_height <- p_metro_plot$sentence_count
+  p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+  p_height=max(p_metro_plot$sentence_count/2,6)
+  svglite(save_file_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+          width =p_width , height =p_height
+          #dpi = 1200
+  )
+  subtitle="ICBe Dyadic Events (ours)"
+  caption=paste0("Source: CrisisEvents.org (Douglass et al. 2022)
+                 Data: International Crisis Behavior events (ICBe) (Douglass et al. 2022)
+                 ", p_metro_plot$labels$caption) #tag original to bottom
+  
+  plot(
+       p_metro_plot +
+         theme(plot.margin=unit(c(0,0,0,0),"in")) +
+         scale_x_continuous(expand = expansion(add = c(50, 50))) +
+         scale_y_continuous(expand = expansion(add = c(50, 50))) +
+         labs(
+              title = plot_title ,
+              subtitle = subtitle ,
+              caption = caption
+              )
+       )
+  invisible(dev.off())
+  
+}
+
+
+cat('\n\n##### Dataset: {.tabset .tabset-fade .tabset-pills} \n\n')
+cat("\n\n Select a Dataset \n\n")
+
+cat('\n\n##### ICBe (ours) {.tabset .active .tabset-fade .tabset-pills} \n\n')
+
+cat('\n\n###### View: {.tabset .tabset-fade .tabset-pills} \n\n')
+cat("\n\n Select a view \n\n")
+
+cat('\n\n###### Crisis Map {.tabset .active .tabset-fade .tabset-pills} \n\n')
+cat('\n[Report Plot Problem](',plot_problem,'){target="_blank"}')
+cat(' \n \n')
+show_plot(save_file_png)
+cat(' \n \n')
+#cat('</details>')
+
+```
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+#ICBe table
+cat('###### Crisis Narrative {.tabset .tabset-fade .tabset-pills} \n\n')
+cat('\n[Report Table Problem](',table_problem,'){target="_blank"}')
+cat("\n\n",plot_title)
+if(fromscratch  | !file.exists(save_file_ft_png)){
+  ft_full_case <- readRDS(save_file_ft)
+  ft_full_case %>%
+  set_header_labels(values = list(id = "ID",
+                                  sentence = "Sentence",
+                                  codings_sentence = "ICBe Codings (Partial)")
+                     ) %>%
+  flextable::width(j = 2, width=5, unit = "in") %>%
+  flextable::width(j = 3, width=5, unit = "in") %>%
+  #flextable_to_rmd()
+  save_as_image( path = save_file_ft_png)
+}
+show_plot(save_file_ft_png)
+cat(' \n \n')
+#cat('</details>')
+```
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+#ICB Dyadic
+if(file.exists(save_file_icb_p)){
+  cat('\n\n##### ICB \n\n')
+
+  if(fromscratch | !file.exists(save_file_icb_png) ){
+    p_icb_metro_plot <- readRDS(save_file_icb_p)
+    plot_icb_height <- p_icb_metro_plot$sentence_count
+    p_width=max(length(p_icb_metro_plot$actor_colors)*1.5,14)
+    p_height=min(max(p_icb_metro_plot$sentence_count/2,8),12) #cap it at 49 inches long
+    svglite(save_file_icb_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+            width =p_width , height =p_height
+            #dpi = 1200
+    )
+    subtitle="ICB Dyadic Events"
+    caption=paste0("Source: CrisisEvents.org (Douglass et al. 2020)
+                    Data: Dyadic International Crisis Behavior (ICB) (Hewitt 2003)
+                 ", p_metro_plot$labels$caption) #tag original to bottom
+    plot(
+      p_icb_metro_plot + theme(plot.margin=unit(c(0,0,0,0),"in"))+
+        scale_x_continuous(expand = expansion(add = c(10, 15))) +
+        scale_y_continuous(expand = expansion(add = c(100, 100)))  +
+        labs(
+          title = plot_title ,
+          subtitle = subtitle ,
+          caption = caption
+        )
+    )
+    invisible(dev.off())
+
+  }
+  show_plot(save_file_icb_png)
+  #cat('</details>')
+}
+```
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+
+#Phoenix
+if(file.exists(save_file_phoenix_p) | !file.exists(save_file_phoenix_png) ){
+
+  cat('\n\n##### Phoenix \n\n')
+  if(fromscratch){
+    p_metro_plot <- readRDS(save_file_phoenix_p)
+    p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+    p_height=min(max( (p_metro_plot$data$y %>% unique() %>% length()) /2,6),80) #cap it at 30 inches long
+    vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
+    horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
+
+    svglite(save_file_phoenix_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+            width =p_width , height =p_height
+            #dpi = 1200
+    )
+    subtitle="Phoenix Dyadic Events"
+    caption=paste0("Source: CrisisEvents.org (Douglass et al. 2022)
+                    Data: Cline Center Historical Phoenix Event Data (Althaus et al. 2017)
+                 ", p_metro_plot$labels$caption) #tag original to bottom
+
+    plot(
+      p_metro_plot +
+                 theme(plot.margin=unit(c(0,0,0,0),"in")) +
+                 scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
+                 scale_y_continuous(expand = expansion(add = c(0, vertical_offset*3   ) ) )  +
+        labs(
+          title = plot_title ,
+          subtitle = subtitle ,
+          caption = caption
+        )
+    )
+    invisible(dev.off())
+
+  }
+  show_plot(save_file_phoenix_png)
+  #cat('</details>')
+}
+```
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+#terrier
+
+
+if(file.exists(save_file_terrier_p)){
+  cat('\n\n##### Terrier \n\n')
+  if(fromscratch | !file.exists(save_file_terrier_png)){
+    p_metro_plot <- readRDS(save_file_terrier_p)
+    plot_icews_height <- p_metro_plot$sentence_count
+    p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+    p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),80) #cap it at 60 inches long
+    vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
+    horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
+    svglite(save_file_terrier_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+            width =p_width , height =p_height
+            #dpi = 1200
+    )
+    subtitle="Terrier Dyadic Events"
+    caption=paste0("Source: CrisisEvents.org (Douglass et al. 2022)
+                 Data: TERRIER (Temporally Extended, Regular, Reproducible International Event Records) (Liang et al. 2018)
+                 ", p_metro_plot$labels$caption) #tag original to bottom
+    plot(
+      p_metro_plot +
+        theme(plot.margin=unit(c(0,0,0,0),"in")) +
+        scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
+        scale_y_continuous(expand = expansion(add = c(0, vertical_offset*4   ) ) )  +
+        labs(
+          title = plot_title ,
+          subtitle = subtitle ,
+          caption = caption
+        )
+    )
+    invisible(dev.off())
+
+  }
+  show_plot(save_file_terrier_png)
+}
+```
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+#ICEWS
+
+if(file.exists(save_file_icews_p)){
+  cat('\n\n##### ICEWS \n\n')
+  if(fromscratch | !file.exists(save_file_icews_png)){
+    p_metro_plot <- readRDS(save_file_icews_p)
+    p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+    p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),80) #cap it at 60 inches long
+    vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
+    horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
+    svglite(save_file_icews_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+            width =p_width , height =p_height
+            #dpi = 1200
+    )
+    subtitle="ICEWS Dyadic Events"
+    caption=paste0("Source: CrisisEvents.org (Douglass et al. 2022)
+                    Data: Integrated Crisis Early Warning System (ICEWS) (Boschee et al. 2018)
+                 ", p_metro_plot$labels$caption) #tag original to bottom
+    plot(
+      p_metro_plot +
+        theme(plot.margin=unit(c(0,0,0,0),"in")) +
+        scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
+        scale_y_continuous(expand = expansion(add = c(0, vertical_offset*4   ) ) )  +
+        labs(
+          title = plot_title ,
+          subtitle = subtitle ,
+          caption = caption
+        )
+    )
+    invisible(dev.off())
+
+  }
+  show_plot(save_file_icews_png)
+}
+
+```
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+#Mids
+if(file.exists(save_file_mids_p)){
+  cat('\n\n##### MIDs \n\n')
+  if(fromscratch | !file.exists(save_file_mids_png)){
+    p_metro_plot <- readRDS(save_file_mids_p)
+    p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+    p_height=min(max(p_metro_plot$sentence_count/2,6),12) #cap it at 49 inches long
+
+    svglite(save_file_mids_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+            width =p_width , height =p_height
+            #dpi = 1200
+    )
+
+
+    subtitle="Dyadic Militarized Interstate Disputes (MIDs)"
+    caption=paste0("Source: CrisisEvents.org (Douglass et al. 2022)
+                    Data: Dyadic Militarized Interstate Disputes (MIDs) (Maoz et al. 2019)
+                 ", p_metro_plot$labels$caption) #tag original to bottom
+    plot(
+      p_metro_plot +
+        theme(plot.margin=unit(c(0,0,0,0),"in"))+
+        scale_x_continuous(expand = expansion(add = c(10,15))) +
+        scale_y_continuous(expand = expansion(add = c(100, 100)))  +
+        labs(
+          title = plot_title ,
+          subtitle = subtitle ,
+          caption = caption
+        )
+    )
+    invisible(dev.off())
+  }
+  show_plot(save_file_mids_png)
+  #cat('</details>')
+}
+```
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+#Mids Incidents
+if(file.exists(save_file_mids_incidents_p)){
+  cat('\n\n##### MIDs Incidents \n\n')
+  if(fromscratch | !file.exists(save_file_mids_incidents_png) ){
+    p_metro_plot <- readRDS(save_file_mids_incidents_p)
+    p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+    p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
+    vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
+    horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
+    svglite(save_file_mids_incidents_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+            width =p_width , height =p_height
+            #dpi = 1200
+    )
+    subtitle="Militerized Interstate Dispute Incidents"
+    caption=paste0("Source: CrisisEvents.org (Douglass et al. 2022)
+                    Data: Militerized Interstate Dispute Incidents 5.0 (MIDs) (Palmer et al. 2021)
+                 ", p_metro_plot$labels$caption) #tag original to bottom
+    plot(
+      p_metro_plot +
+        theme(plot.margin=unit(c(0,0,0,0),"in")) +
+        scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
+        scale_y_continuous(expand = expansion(add = c(0, vertical_offset*1   ) ) )  +
+        labs(
+          title = plot_title ,
+          subtitle = subtitle ,
+          caption = caption
+        )
+    )
+    invisible(dev.off())
+  }
+  show_plot(save_file_mids_incidents_png)
+  #cat('</details>')
+}
+```
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+#UCDP-GED Incidents
+if(file.exists(save_file_ucdp_p)){
+  cat('\n\n##### UCDP-GED \n\n')
+  if(fromscratch | !file.exists(save_file_ucdp_png) ){
+    p_metro_plot <- readRDS(save_file_ucdp_p)
+    p_width=max(length(p_metro_plot$actor_colors)*1.5,14)
+    p_height=min(max((p_metro_plot$data$y %>% unique() %>% length()) /2,6),60) #cap it at 60 inches long
+    vertical_offset= (p_metro_plot$data$y %>% range() %>% abs() %>% diff() %>% abs())/(p_metro_plot$data$y %>% unique() %>% length())   #offsets are kind of complicated bc of the graph
+    horizontal_offset= (p_metro_plot$data$x %>% range() %>% abs() %>% diff() %>% abs())/length(p_metro_plot$actor_colors)
+    svglite(save_file_ucdp_png, #because this is a multiple and not a discrete amount it ends up adding too much padding to very long
+            width =p_width , height =p_height
+            #dpi = 1200
+    )
+    subtitle="UCDP-GED"
+    caption=paste0("Source: CrisisEvents.org (Douglass et al. 2022)
+                    Data: UCDP Georeferenced Event Dataset (UCDP-GED) (Sundber and Melander 2012)
+                 ", p_metro_plot$labels$caption) #tag original to bottom
+    plot(
+      p_metro_plot +
+        theme(plot.margin=unit(c(0,0,0,0),"in")) +
+        scale_x_continuous(expand = expansion(add = c(horizontal_offset/2,horizontal_offset/2)) ) +
+        scale_y_continuous(expand = expansion(add = c(0, vertical_offset*1   ) ) )
+    )
+    invisible(dev.off())
+  }
+  show_plot(save_file_ucdp_png)
+  #cat('</details>')
+}
+```
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+  #skip wikipedia temporarily
+  #wikipedia_links <- conflict_data_long_singlecode_icb %>% filter(crisno==crisis) %>% pull(wiki_en_link)
+  #if(length(wikipedia_links)>0 ){
+  #  cat('\n\n#### Wikipedia Page \n\n')
+  #  cat(glue('<iframe src="',{wikipedia_links[1]},'" loading="lazy" height="800" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" data-external="1"></iframe>'))
+  #}
+
+  #cat("\n\n### {-}\n\n")
+  #cat("\n\n## {-}\n\n")
+
+```

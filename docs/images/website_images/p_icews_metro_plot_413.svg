@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1008.00pt' height='432.00pt' viewBox='0 0 1008.00 432.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw'>
+    <rect x='0.00' y='0.00' width='1008.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<rect x='0.00' y='-0.00000000000011' width='1008.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMi43NHwxMDA4LjAwfDUxLjc4fDM5MS44MA=='>
+    <rect x='2.74' y='51.78' width='1005.26' height='340.02' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMi43NHwxMDA4LjAwfDUxLjc4fDM5MS44MA==)'>
+<circle cx='128.40' cy='391.80' r='1.42' style='stroke-width: 0.71; stroke: #1B9E77; fill: #1B9E77;' />
+<circle cx='631.03' cy='391.80' r='1.42' style='stroke-width: 0.71; stroke: #D95F02; fill: #D95F02;' />
+<polyline points='136.90,398.89 138.55,398.89 143.63,398.89 148.71,398.89 153.78,398.89 158.86,398.89 163.94,398.89 169.01,398.89 174.09,398.89 179.17,398.89 184.25,398.89 189.32,398.89 194.40,398.89 199.48,398.89 204.55,398.89 209.63,398.89 214.71,398.89 219.78,398.89 224.86,398.89 229.94,398.89 235.02,398.89 240.09,398.89 245.17,398.89 250.25,398.89 255.32,398.89 260.40,398.89 265.48,398.89 270.56,398.89 275.63,398.89 280.71,398.89 285.79,398.89 290.86,398.89 295.94,398.89 301.02,398.89 306.09,398.89 311.17,398.89 316.25,398.89 321.33,398.89 326.40,398.89 331.48,398.89 336.56,398.89 341.63,398.89 346.71,398.89 351.79,398.89 356.87,398.89 361.94,398.89 367.02,398.89 372.10,398.89 377.17,398.89 382.25,398.89 387.33,398.89 392.41,398.89 397.48,398.89 402.56,398.89 407.64,398.89 412.71,398.89 417.79,398.89 422.87,398.89 427.94,398.89 433.02,398.89 438.10,398.89 443.18,398.89 448.25,398.89 453.33,398.89 458.41,398.89 463.48,398.89 468.56,398.89 473.64,398.89 478.72,398.89 483.79,398.89 488.87,398.89 493.95,398.89 499.02,398.89 504.10,398.89 509.18,398.89 514.25,398.89 519.33,398.89 524.41,398.89 529.49,398.89 534.56,398.89 539.64,398.89 544.72,398.89 549.79,398.89 554.87,398.89 559.95,398.89 565.03,398.89 570.10,398.89 575.18,398.89 580.26,398.89 585.33,398.89 590.41,398.89 595.49,398.89 600.56,398.89 605.64,398.89 610.72,398.89 615.80,398.89 620.87,398.89 622.52,398.89 ' style='stroke-width: 0.85; stroke: #1B9E77; stroke-linecap: butt;' />
+<polyline points='620.07,400.30 622.52,398.89 620.07,397.47 ' style='stroke-width: 0.85; stroke: #1B9E77; stroke-linecap: butt;' />
+<polyline points='622.52,384.71 620.87,384.71 615.80,384.71 610.72,384.71 605.64,384.71 600.56,384.71 595.49,384.71 590.41,384.71 585.33,384.71 580.26,384.71 575.18,384.71 570.10,384.71 565.03,384.71 559.95,384.71 554.87,384.71 549.79,384.71 544.72,384.71 539.64,384.71 534.56,384.71 529.49,384.71 524.41,384.71 519.33,384.71 514.25,384.71 509.18,384.71 504.10,384.71 499.02,384.71 493.95,384.71 488.87,384.71 483.79,384.71 478.72,384.71 473.64,384.71 468.56,384.71 463.48,384.71 458.41,384.71 453.33,384.71 448.25,384.71 443.18,384.71 438.10,384.71 433.02,384.71 427.94,384.71 422.87,384.71 417.79,384.71 412.71,384.71 407.64,384.71 402.56,384.71 397.48,384.71 392.41,384.71 387.33,384.71 382.25,384.71 377.17,384.71 372.10,384.71 367.02,384.71 361.94,384.71 356.87,384.71 351.79,384.71 346.71,384.71 341.63,384.71 336.56,384.71 331.48,384.71 326.40,384.71 321.33,384.71 316.25,384.71 311.17,384.71 306.09,384.71 301.02,384.71 295.94,384.71 290.86,384.71 285.79,384.71 280.71,384.71 275.63,384.71 270.56,384.71 265.48,384.71 260.40,384.71 255.32,384.71 250.25,384.71 245.17,384.71 240.09,384.71 235.02,384.71 229.94,384.71 224.86,384.71 219.78,384.71 214.71,384.71 209.63,384.71 204.55,384.71 199.48,384.71 194.40,384.71 189.32,384.71 184.25,384.71 179.17,384.71 174.09,384.71 169.01,384.71 163.94,384.71 158.86,384.71 153.78,384.71 148.71,384.71 143.63,384.71 138.55,384.71 136.90,384.71 ' style='stroke-width: 0.85; stroke: #D95F02; stroke-linecap: butt;' />
+<polyline points='139.36,383.30 136.90,384.71 139.36,386.13 ' style='stroke-width: 0.85; stroke: #D95F02; stroke-linecap: butt;' />
+<text x='382.25' y='385.58' text-anchor='middle' style='font-size: 11.38px; font-family: Liberation Sans;' textLength='176.32px' lengthAdjust='spacingAndGlyphs'>use conventional military force</text>
+<text x='882.34' y='395.95' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #BEBEBE; font-family: Liberation Sans;' textLength='56.38px' lengthAdjust='spacingAndGlyphs'>1995-Jan</text>
+<text x='128.40' y='55.92' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #1B9E77; font-family: Liberation Sans;' textLength='51.85px' lengthAdjust='spacingAndGlyphs'>Ecuador</text>
+<text x='631.03' y='55.92' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #D95F02; font-family: Liberation Sans;' textLength='29.76px' lengthAdjust='spacingAndGlyphs'>Peru</text>
+</g>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<text x='2.74' y='34.34' style='font-size: 12.00px; font-family: Liberation Sans Narrow;' textLength='97.92px' lengthAdjust='spacingAndGlyphs'>ICEWS Dyadic Events</text>
+<text x='2.74' y='12.38' style='font-size: 18.00px; font-weight: bold; font-family: Liberation Sans Narrow;' textLength='218.15px' lengthAdjust='spacingAndGlyphs'>ECUADOR/PERU V (1995-1995)</text>
+<text x='1008.00' y='410.70' text-anchor='end' style='font-size: 9.00px; font-style: italic; font-family: Liberation Sans Narrow;' textLength='155.49px' lengthAdjust='spacingAndGlyphs'>Source: CrisisEvents.org (Douglass et al. 2021)</text>
+<text x='1008.00' y='420.42' text-anchor='end' style='font-size: 9.00px; font-style: italic; font-family: Liberation Sans Narrow;' textLength='292.58px' lengthAdjust='spacingAndGlyphs'>                    Data: Integrated Crisis Early Warning System (ICEWS) (Boschee et al. 2018)</text>
+<text x='1008.00' y='430.14' text-anchor='end' style='font-size: 9.00px; font-style: italic; font-family: Liberation Sans Narrow;' textLength='34.88px' lengthAdjust='spacingAndGlyphs'>                 </text>
+</g>
+</svg>

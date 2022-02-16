@@ -1,0 +1,151 @@
+---
+title: "Pick a Crisis"
+output:
+  html_document:
+    toc: true
+---
+
+
+# By Start Year
+ 
+```{r, echo=F, message=F, warnings=F}
+
+library(tidyverse)
+library(flextable)
+library(ftExtra)
+
+```
+
+
+```{r, echo=F, message=F, warnings=F}
+
+icb_crises <-read_csv(paste0(here::here(), "/data_in/icb1v14.csv") )
+icb_crises <-read_csv(paste0(here::here(), "/data_in/icb1v14.csv") ) %>% filter(crisno<=476 & crisno!=475 & !is.na(yrtrig)) #Always subset to just what we have
+crises <- icb_crises$crisno %>% unique()
+
+#titles <- paste0(icb_crises$crisname %>% stringr::str_to_title()," (", icb_crises$yrtrig ,"-",icb_crises$yrterm,")", " [#", icb_crises$crisno,"]")
+titles <- paste0(icb_crises$crisname %>% stringr::str_to_title() ,  " [#", icb_crises$crisno,"]")
+
+df <- icb_crises %>% dplyr::select(crisname, Start=yrtrig, End=yrterm, Number=crisno) %>% mutate(title=titles) %>% arrange(desc(Start))
+
+#df$Start[118]
+#df$Start[118*2]
+#df$Start[118*3]
+#df$Start[118*4]
+
+df1 <- df %>% filter(Start>=1985) %>%
+             mutate(Start=Start %>% as.character(), End = End %>% as.character()) %>%
+             mutate(Name= paste0("[",title,"](",Number,".html","){target=\"_blank\"}")) %>%
+             dplyr::select(Start, Name) %>% mutate(row=row_number())
+
+df2 <- df %>% filter(Start<1985 & Start>=1970) %>%
+             mutate(Start=Start %>% as.character(), End = End %>% as.character()) %>%
+             mutate(Name= paste0("[",title,"](",Number,".html","){target=\"_blank\"}")) %>%
+             dplyr::select(Start, Name) %>% mutate(row=row_number())
+
+df3 <- df %>% filter(Start<1970 & Start>=1948) %>%
+             mutate(Start=Start %>% as.character(), End = End %>% as.character()) %>%
+             mutate(Name= paste0("[",title,"](",Number,".html","){target=\"_blank\"}")) %>%
+             dplyr::select(Start, Name) %>% mutate(row=row_number())
+
+df4 <- df %>% filter(Start<1948) %>%
+             mutate(Start=Start %>% as.character(), End = End %>% as.character()) %>%
+             mutate(Name= paste0("[",title,"](",Number,".html","){target=\"_blank\"}")) %>%
+             dplyr::select(Start, Name) %>% mutate(row=row_number())
+
+
+df_ft <- df1 %>% full_join(df2, by='row') %>% full_join(df3, by='row') %>% full_join(df4, by='row') %>%
+         dplyr::select(Start.x, Name.x, Start.y, Name.y, Start.x.x, Name.x.x,Start.y.y,Name.y.y) %>%
+         flextable::as_flextable() %>%
+         set_header_labels(values = list(
+                        Start.x = "",
+                        Name.x = "",
+                        Start.y = "",
+                        Name.y = "",
+                        Start.x.x="",
+                        Name.x.x="",
+                        Start.y.y="",
+                        Name.y.y=""
+                        ) ) %>%
+         ftExtra::colformat_md(j = 2, part="body") %>%
+         ftExtra::colformat_md(j = 4, part="body") %>%
+         ftExtra::colformat_md(j = 6, part="body") %>%
+         ftExtra::colformat_md(j = 8, part="body") %>%
+         width(2, width = 3) %>%
+         width(4, width = 3) %>%
+         width(6, width = 3) %>%
+         width(8, width = 3) %>%
+         merge_v(1) %>% 
+         merge_v(3) %>% 
+         merge_v(5) %>% 
+         merge_v(7) %>% 
+         valign(j=1, valign = "top") %>%
+         valign(j=3, valign = "top") %>%
+         valign(j=5, valign = "top") %>%
+         valign(j=7, valign = "top") %>%
+         vline(j=c(2,4,6))
+
+df_ft
+
+```
+# By Participant
+
+```{r, eval=T, echo=F, message=F, warnings=F}
+
+target_file <- paste0(here::here(),"//data_in//icb_manual_recoding_master_sheet.xlsx")
+
+dictionary_actors_labels    <- readxl::read_excel(target_file, sheet="actors") %>% dplyr::select(crisno, value_normalized=value_normalized_wikidata_id, value_normalized_label) %>% dplyr::distinct() %>% na.omit()
+
+ICBe_V1_long_agreed <- readRDS("data_in/ICBe_V1_long_agreed.Rds") 
+actors <- ICBe_V1_long_agreed %>% dplyr::select(crisno, variable_normalized, value_normalized) %>% filter( grepl(pattern="actor", variable_normalized))
+
+qcode_counts <- actors %>% count(crisno, value_normalized) %>% arrange(value_normalized, desc(n)) %>% 
+  left_join(  dictionary_actors_labels %>% dplyr::select(value_normalized, value_normalized_label) %>% distinct() ) %>% distinct()
+  
+#icb_crises$titles_years <-  paste0(icb_crises$crisname %>% stringr::str_to_title()," (", icb_crises$yrtrig ,"-",icb_crises$yrterm,")", " [#", icb_crises$crisno,"]")
+icb_crises$titles_years <-  paste0("[",icb_crises$crisname %>% stringr::str_to_title(),
+                                   " (", icb_crises$yrtrig ,"-",icb_crises$yrterm,")", " (#", icb_crises$crisno,")](",icb_crises$crisno,".html){target=\"_blank\"}")
+
+df_bypart <- qcode_counts %>% left_join(icb_crises %>% dplyr::select(crisno, titles_years)) %>% arrange(value_normalized_label, desc(n)) %>% 
+  dplyr::select(value_normalized_label, titles_years, n) %>%
+         filter(n>2) %>%
+         filter(!is.na(value_normalized_label)) 
+
+
+
+df_bypart_ft <- df_bypart %>%
+         flextable::as_flextable() %>%
+         merge_v(1) %>% 
+         valign(j=1, valign = "top") %>%
+
+         set_header_labels(values = list(
+                        value_normalized_label = "Actor",
+                        titles_years = "Crisis",
+                        n = "Acts"
+                        ) ) %>%
+         ftExtra::colformat_md(j = 2, part="body") %>%
+         width(1, width = 5) %>%
+         width(2, width = 5) %>%
+         hline(i=which(df_bypart$value_normalized_label!=lag(df_bypart$value_normalized_label) )-1 )
+           
+#         ftExtra::colformat_md(j = 4, part="body") %>%
+#         ftExtra::colformat_md(j = 6, part="body") %>%
+#         ftExtra::colformat_md(j = 8, part="body") %>%
+#         width(2, width = 3) %>%
+#         width(4, width = 3) %>%
+#         width(6, width = 3) %>%
+#         width(8, width = 3) %>%
+#         merge_v(1) %>% 
+#         merge_v(3) %>% 
+#         merge_v(5) %>% 
+#         merge_v(7) %>% 
+#         valign(j=1, valign = "top") %>%
+#         valign(j=3, valign = "top") %>%
+#         valign(j=5, valign = "top") %>%
+#         valign(j=7, valign = "top") %>%
+#         vline(j=c(2,4,6))
+
+df_bypart_ft %>% line_spacing(space = 0.5, part = "all")
+
+```
+

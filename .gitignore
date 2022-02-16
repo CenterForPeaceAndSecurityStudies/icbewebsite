@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+data_ignore
+data_in

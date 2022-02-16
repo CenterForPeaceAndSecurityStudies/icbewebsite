@@ -1,0 +1,20 @@
+name: "my-website"
+output_dir: "docs"
+navbar:
+  title: "CrisisEvents.org - High Quality International Relations Event Data"
+  right:
+    - text: "Introduction and Paper"
+      href: index.html
+    - text: "View the Data"
+      href: browse.html
+    - text: "Get Data and Code (Github)"
+      href: https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css
+    self_contained: no
+    lib_dir: 'lib'

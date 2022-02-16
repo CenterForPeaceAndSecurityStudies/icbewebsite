@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1008.00pt' height='432.00pt' viewBox='0 0 1008.00 432.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw'>
+    <rect x='0.00' y='0.00' width='1008.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+<rect x='0.00' y='0.00' width='1008.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMi43NHwxMDA4LjAwfDAuMDB8NDI5LjI2'>
+    <rect x='2.74' y='0.00' width='1005.26' height='429.26' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMi43NHwxMDA4LjAwfDAuMDB8NDI5LjI2)'>
+<circle cx='170.28' cy='343.42' r='1.42' style='stroke-width: 0.71; stroke: #1B9E77; fill: #1B9E77;' />
+<circle cx='840.46' cy='343.42' r='1.42' style='stroke-width: 0.71; stroke: #D95F02; fill: #D95F02;' />
+<polyline points='838.96,351.79 838.65,353.51 837.26,356.73 835.50,359.88 833.37,362.97 830.88,365.98 828.04,368.92 824.85,371.80 821.32,374.60 817.47,377.33 813.30,380.00 808.82,382.59 804.04,385.11 798.96,387.56 793.60,389.95 787.96,392.26 782.05,394.50 775.88,396.67 769.45,398.78 762.79,400.81 755.88,402.77 748.75,404.66 741.40,406.49 733.83,408.24 726.06,409.92 718.10,411.53 709.96,413.07 701.63,414.54 693.13,415.95 684.48,417.28 675.66,418.54 666.71,419.73 657.62,420.85 648.39,421.90 639.05,422.88 629.60,423.79 620.04,424.64 610.39,425.41 600.65,426.11 590.83,426.74 580.94,427.30 570.99,427.79 560.99,428.21 550.94,428.56 540.85,428.84 530.73,429.05 520.60,429.19 510.45,429.26 500.29,429.26 490.14,429.19 480.01,429.05 469.89,428.84 459.80,428.56 449.75,428.21 439.75,427.79 429.80,427.30 419.91,426.74 410.09,426.11 400.35,425.41 390.70,424.64 381.14,423.79 371.69,422.88 362.35,421.90 353.12,420.85 344.03,419.73 335.08,418.54 326.26,417.28 317.61,415.95 309.11,414.54 300.78,413.07 292.64,411.53 284.67,409.92 276.91,408.24 269.34,406.49 261.99,404.66 254.86,402.77 247.95,400.81 241.29,398.78 234.86,396.67 228.69,394.50 222.78,392.26 217.14,389.95 211.78,387.56 206.70,385.11 201.92,382.59 197.44,380.00 193.27,377.33 189.42,374.60 185.89,371.80 182.70,368.92 179.86,365.98 177.37,362.97 175.24,359.88 173.48,356.73 172.09,353.51 171.78,351.79 ' style='stroke-width: 0.53; stroke: #D95F02; stroke-linecap: butt;' />
+<polyline points='175.44,356.12 171.78,351.79 169.86,357.12 ' style='stroke-width: 0.53; stroke: #D95F02; stroke-linecap: butt;' />
+<text transform='translate(500.36,411.15) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='37.23px' lengthAdjust='spacingAndGlyphs'>2 deaths</text>
+<text transform='translate(500.33,418.83) rotate(-360)' text-anchor='middle' style='font-size: 8.54px; font-family: Liberation Sans;' textLength='42.66px' lengthAdjust='spacingAndGlyphs'>33 deaths</text>
+<text x='170.28' y='4.15' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #1B9E77; font-family: Liberation Sans;' textLength='50.64px' lengthAdjust='spacingAndGlyphs'>Djibouti</text>
+<text x='840.46' y='4.15' text-anchor='middle' style='font-size: 11.38px; font-weight: bold; fill: #D95F02; font-family: Liberation Sans;' textLength='43.72px' lengthAdjust='spacingAndGlyphs'>Eritrea</text>
+</g>
+<g clip-path='url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NDMyLjAw)'>
+</g>
+</svg>

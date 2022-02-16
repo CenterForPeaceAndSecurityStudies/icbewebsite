@@ -1,0 +1,55 @@
+---
+title: "_generate_crisis"
+output: html_document
+---
+
+This file runs the for loop of rendering everything.
+
+
+
+Nations compete in chess matches for conquest and survival. A multi-university team of social scientists examined 476 international crises in detail, recording over 10,000 moves and counter moves.
+
+You can browse timelines and read narratives of those crises below - pick a decade, year, and crisis. Compare our contribution, the International Crisis Behavior events dataset (ICBe), to the previous state of the art, and then read the [paper and download the data](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset) for yourself.
+
+
+
+
+
+```{r, echo=F, results='asis',  include=T, message=F, cache=F, warning=F}
+
+#cat("Decade\n")
+cat('\n\n# {.tabset .tabset-fade .tabset-pills}\n\n') #Start tabs for decades
+cat('\n\n## Decade: {.tabset .tabset-fade .tabset-pills} \n\n')
+cat("\n\n Select a Decade\n\n")
+for(d in na.omit(unique(icb_crises$decade))){ #for debuging can limit it to just 2 decades #[1:2]
+  
+  #Start tab for Decade
+  if( d==1960){ cat('\n\n## ', d , ' {.active .tabset .tabset-fade .tabset-pills}\n\n') } else {
+    cat('\n\n## ', d , ' {.tabset .tabset-fade .tabset-pills} \n\n' )  
+  }
+
+  #Start tab for Year
+  #cat("Year\n")
+  cat('\n\n### Year: {.tabset .tabset-fade .tabset-pills} \n\n')
+  cat("\n\n Select a Year\n\n")
+  years = icb_crises %>% filter(decade %in% d) %>% pull(yrtrig) %>% unique()
+  for(year in years) {
+    if( (d==1960 & year==1962) | (d!=1960 & year==min(years) )){
+      cat('\n\n### ', year , ' {.active .tabset .tabset-fade .tabset-pills}\n\n') } else {
+      cat('\n\n### ', year , ' {.tabset .tabset-fade .tabset-pills}\n\n' )  
+    }  
+
+    cat('\n\n#### Crisis: {.tabset .tabset-fade .tabset-pills} \n\n')
+    cat("\n\n Select a Crisis \n\n")
+    for(crisis in icb_crises %>% filter(yrtrig %in% year) %>% pull(crisno) ) { 
+      #if(crisis==397){next} #397 is currently broken
+      try({
+        map(crisis, fromscratch=fromscratch)
+      })
+    }
+  #cat('\n\n## {-}\n\n') #Close tab for cases
+  }
+}
+cat('\n\n# {-}\n\n') #Close tab for decades
+
+```
