@@ -82,11 +82,11 @@ text <- '\U1F6A8New Dataset Alert\U1F6A8
 
 CrisisEvents.Org
 
-The first high coverage, recall, and precision international event database
+The first high coverage, recall, and precision international event dataset
 
 International Crisis Behaviors Events (ICBe)
 475 Crises (1918-2015)
-117+ behaviors
+117+ Behaviors
 10k+ Human Coded Events
 
 @Cpassucsd @RexDouglass'
@@ -105,7 +105,7 @@ ICBe was developed by the [Center for Peace and Security Studies](https://cpass.
 
 Read our introductory paper:
 
-> "[Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises.](http://arxiv.org/abs/2202.07081)" Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wiklenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge. 2022. arXiv:2202.07081.
+> "[Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises.](http://arxiv.org/abs/2202.07081)" Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wilkenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge. 2022. arXiv:2202.07081.
 
 <br>
 
@@ -157,4 +157,4 @@ ICBe is the first high coverage, high recall, and high precision event dataset o
 
 3.  [Download the data](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/) and use it downstream in your own projects.
 
-4.  [Share](https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0ACrisisEvents.Org%0A%0AThe%20first%20high%20coverage,%20recall,%20and%20precision%20international%20conflict%20data%0A%0AInternational%20Crisis%20Behaviors%20Events%20(ICBe)%0A475%20Crises%20(1918-2015)%0A117+%20behaviors%0A10k+%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass) on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.
+4.  [Share](https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0ACrisisEvents.Org%0A%0AThe%20first%20high%20coverage,%20recall,%20and%20precision%20international%20event%20dataset%0A%0AInternational%20Crisis%20Behaviors%20Events%20(ICBe)%0A475%20Crises%20(1918-2015)%0A117+%20Behaviors%0A10k+%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass) on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.
