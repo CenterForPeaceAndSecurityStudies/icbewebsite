@@ -27,11 +27,11 @@ text <- '\U1F6A8New Dataset Alert\U1F6A8
 
 CrisisEvents.Org
 
-The first high coverage, recall, and precision international event database
+The first high coverage, recall, and precision international event dataset
 
 International Crisis Behaviors Events (ICBe)
 475 Crises (1918-2015)
-117+ behaviors
+117+ Behaviors
 10k+ Human Coded Events
 
 @Cpassucsd @RexDouglass'
