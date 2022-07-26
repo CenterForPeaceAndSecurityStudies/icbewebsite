@@ -108,7 +108,11 @@ ICBe was developed by the [Center for Peace and Security Studies](https://cpass.
 
 Read our introductory paper:
 
-> "[Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises.](http://arxiv.org/abs/2202.07081)" Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wilkenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge. 2022. arXiv:2202.07081.
+> "[Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises.](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/raw/master/replication_paper/arxiv_draft/paper.pdf)" Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wilkenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge. 2022. arXiv:2202.07081.
+
+[Introducing the ICBe Dataset: Appendix](https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/raw/master/replication_paper/arxiv_draft/appendix.pdf)
+
+<!-- http://arxiv.org/abs/2202.07081 -->
 
 <br>
 
