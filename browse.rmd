@@ -5,9 +5,6 @@ output:
     toc: true
 ---
 
-
-# By Start Year
- 
 ```{r, echo=F, message=F, warnings=F}
 
 library(tidyverse)
@@ -17,8 +14,101 @@ library(ftExtra)
 ```
 
 
-```{r, echo=F, message=F, warnings=F}
+# By Year and Summary
 
+```{r, eval=T, echo=F, message=F, warnings=F}
+
+ICBe_crises_markdown <- readRDS( paste0(here::here(), "/../ICBEdataset/replication_data/out/ICBe_V1.1_crises_markdown.Rds")) 
+
+
+#oh is it because break is reserved in R? lol
+#icb_crises <- read_csv(file=paste0(here::here(), "/data_other_datasets/icb/icb1v14.csv")) %>% janitor::clean_names()
+icb_crises  <- read.csv(paste0(here::here(), "/../ICBEdataset/replication_data/in/icb1v14.csv")) %>% janitor::clean_names()
+icb_crises$start_simple <- icb_crises$yrtrig+(icb_crises$motrig/12)
+icb_crises$end_simple <- icb_crises$yrterm+(icb_crises$moterm/12)
+
+#somehow break of all things is a b roken name
+#icb_actors <- read_csv(file=paste0(here::here(), "/data_other_datasets/icb/icb2v14.csv"))
+icb_actors <- read.csv(paste0(here::here(), "/../ICBEdataset/replication_data/in/icb2v14.csv"))
+
+#The answer is I have to include it as an image, none of the table options were compiling correctly without error
+
+
+#Create the table of contents
+temp_all <-  ICBe_crises_markdown %>%
+  arrange(desc(crisno %>% as.numeric() ) ) %>% ungroup() %>% dplyr::select(
+  crisno, crisis_text,  yrtrig , yrterm,  n_sentence_number_int_aligned, n_events,
+  coders_expert ,
+  coders_novice ,
+  actors ,
+  units_domains,
+  forces_fatalities
+) %>%
+  mutate_all(as.character) %>%
+  mutate(crisis_text = crisis_text %>% stringr::str_to_title() %>% str_replace("Iii$","III")) %>%
+  mutate(crisis_text = crisis_text %>% stringr::str_to_title() %>% str_replace("Ii$","II")) %>%
+  mutate(crisis_text = crisis_text %>% stringr::str_to_title() %>% str_replace("1$","")) %>%
+  #convert to links
+  #(407.html){target="_blank"}
+  mutate(crisis_text= paste0("[",crisis_text,"]","(",crisno,'.html){target="_blank"}')) 
+
+
+convert_to_ft <- function(x){
+  x %>% flextable::as_flextable() %>%
+    flextable::set_header_labels(values =
+                                   list(crisno = "#",
+                                        crisis_text = "Title",
+                                        yrtrig = "Start",
+                                        yrterm = "End",
+                                        n_sentence_number_int_aligned = "Sent.",
+                                        n_events = "Events",
+                                        coders_expert = "Exp.",
+                                        coders_novice = "Nov.",
+                                        actors = "Actors",
+                                        units_domains = "Units/Domains",
+                                        forces_fatalities = "Forces/Fatalities"
+                                        #value_markdown = "Abstract"
+                                   ) ) %>%
+    flextable::add_header(values =
+                            list(crisno = "Crisis",
+                                 crisis_text = "Crisis",
+                                 yrtrig = "Years",
+                                 yrterm = "Years",
+                                 n_sentence_number_int_aligned = "Counts",
+                                 n_events = "Counts",
+                                 coders_expert = "Coders",
+                                 coders_novice = "Coders"#,
+                                 #value_markdown = "Abstract"
+                            ) ) %>%
+    flextable::merge_h(part = "header" ) %>%
+    flextable::width( j = 1, width=0.3)  %>%
+    flextable::width( j = 2, width=2.75)  %>%
+    flextable::width( j = 3, width=0.6)  %>%
+    flextable::width( j = 4, width=0.6)  %>%
+    flextable::width( j = 5, width=0.25)  %>%
+    flextable::width( j = 6, width=0.25)  %>%
+    flextable::width( j = 7, width=0.25)  %>%
+    flextable::width( j = 8, width=0.35)  %>%
+    flextable::width( j = 9, width=2.5)  %>%
+    flextable::width( j = 10, width=1.5)  %>%
+    flextable::width( j = 11, width=1.0)  %>%
+    flextable::fontsize(size = 9, part = "all") %>%
+    flextable::padding(padding = 0.1, part = "all") %>%
+    flextable::line_spacing(space = 1, part = "body") %>%
+    flextable::bg( i = which( 1:nrow(x) %% 2 == 1)  , part = "body", bg = "#EFEFEF") %>%
+    ftExtra::colformat_md(j = 9:11, part="body") %>%
+    ftExtra::colformat_md(j = 2, part="body")
+}
+
+temp_all %>% ungroup() %>%   convert_to_ft()
+
+```
+
+
+```{r, eval=F, echo=F, message=F, warnings=F}
+
+# By Start Year
+ 
 icb_crises <-read_csv(paste0(here::here(), "/data_in/icb1v14.csv") )
 icb_crises <-read_csv(paste0(here::here(), "/data_in/icb1v14.csv") ) %>% filter(crisno<=476 & crisno!=475 & !is.na(yrtrig)) #Always subset to just what we have
 crises <- icb_crises$crisno %>% unique()
@@ -114,6 +204,9 @@ df_bypart <- qcode_counts %>% left_join(icb_crises %>% dplyr::select(crisno, tit
 
 
 df_bypart_ft <- df_bypart %>%
+           mutate(titles_years = titles_years %>% str_replace(fixed("Iii"),"II")) %>%
+         mutate(titles_years = titles_years %>% str_replace(fixed("Ii"),"II")) %>%
+         mutate(titles_years = titles_years %>% str_replace(fixed("1"),"")) %>%
          flextable::as_flextable() %>%
          merge_v(1) %>% 
          valign(j=1, valign = "top") %>%
@@ -126,7 +219,8 @@ df_bypart_ft <- df_bypart %>%
          ftExtra::colformat_md(j = 2, part="body") %>%
          width(1, width = 5) %>%
          width(2, width = 5) %>%
-         hline(i=which(df_bypart$value_normalized_label!=lag(df_bypart$value_normalized_label) )-1 )
+         hline(i=which(df_bypart$value_normalized_label!=lag(df_bypart$value_normalized_label) )-1 ) %>%
+         flextable::bg( i = which( (df_bypart$value_normalized_label %>% as.factor() %>% as.numeric()) %% 2 == 1)  , part = "body", bg = "#EFEFEF") 
            
 #         ftExtra::colformat_md(j = 4, part="body") %>%
 #         ftExtra::colformat_md(j = 6, part="body") %>%

@@ -9,11 +9,13 @@ library(tidyverse)
 template <- readLines("_crisis_template.Rmd")
 length(template)
 
-icb_crises <-read_csv(paste0(here::here(), "/data_in/icb1v14.csv") ) %>% filter(crisno<=476 & crisno!=475 & !is.na(yrtrig)) #Always subset to just what we have
+icb_crises <-read_csv(paste0(here::here(), "/data_in/icb1v14.csv") ) %>% 
+             filter( (crisno<=473 | crisno %in% c(475,476)) &  !is.na(yrtrig)) #Always subset to just what we have
 
 #conflict_data_long_singlecode_icb <- readRDS("/mnt/8tb_a/rwd_github_private/icbe/conflict_data_long_singlecode_icb.rds") %>% separate(dataset_identifier, c("a", "b"), sep='_') %>% mutate(crisno=b %>% as.numeric())
 crises <- icb_crises$crisno %>% unique()
 
+#This progmatically creates rmd files for each crisis
 library(glue)
 for(crisis in crises){
   i=which(icb_crises$crisno==crisis)
@@ -21,7 +23,7 @@ for(crisis in crises){
 
   header=paste(
   "---",
-  glue::glue("title: \"{section}\""), #make sure you use double quotes or apastrophes in titles will break rmds
+  glue::glue("title: \"{section}\""), #make sure you use double quotes or apostrophes in titles will break rmds
   "output: html_document",
   "---",
   "",
@@ -38,6 +40,7 @@ for(crisis in crises){
 #cannot open compressed file '/mnt/8tb_a/rwd_github_private/icbewebsite//images/ggplots/p_metro_plot_474.Rds', probable reason 'No such file or directory'
 
 #Run this by hand
+#This executes all of them
 library(rmarkdown)
 render_site(
   input = ".",
@@ -46,9 +49,9 @@ render_site(
   quiet = T,
   encoding = "UTF-8"
 )
-dir.create('/mnt/8tb_a/rwd_github_private/icbewebsite/docs/website_images/')
+dir.create('/mnt/8tb_a/rwd_github_private/icbewebsite/docs/website_images/') #This copies images created by the RMD to the target docs folder bc it gets wiped on render
 file.copy("/mnt/8tb_a/rwd_github_private/icbewebsite/images/website_images/", "/mnt/8tb_a/rwd_github_private/icbewebsite/docs/", recursive=TRUE)
-#ok new plan, I'm going to just copy the folder over after it finishes rendering
+
 
 
 ```

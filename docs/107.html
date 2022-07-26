@@ -13,7 +13,7 @@
 
 <title>Hiroshima-Nagasaki (1945-1945) [#107]</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -57,6 +57,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -81,6 +82,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -233,7 +237,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -287,41 +291,50 @@ window.twttr = (function(d, s, id) {
 }(document, "script", "twitter-wjs"));
 </script>
 <p><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0ACrisisEvents.Org%0A%0AThe%20first%20high%20coverage,%20recall,%20and%20precision%20international%20event%20dataset%0A%0AInternational%20Crisis%20Behaviors%20Events%20(ICBe)%0A475%20Crises%20(1918-2015)%0A117+%20Behaviors%0A10k+%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass">Share</a>’</p>
-<div id="choose-summary-to-view" class="section level4 tabset tabset-fade tabset-pills">
+<div id="choose-summary-to-view"
+class="section level4 tabset tabset-fade tabset-pills">
 <h4 class="tabset tabset-fade tabset-pills">Choose Summary to View</h4>
-<div id="dataset" class="section level5 tabset tabset-fade tabset-pills">
+<div id="dataset"
+class="section level5 tabset tabset-fade tabset-pills">
 <h5 class="tabset tabset-fade tabset-pills">Dataset:</h5>
 <p>Select a Dataset</p>
 </div>
-<div id="icbe-ours" class="section level5 tabset active tabset-fade tabset-pills">
+<div id="icbe-ours"
+class="section level5 tabset active tabset-fade tabset-pills">
 <h5 class="tabset active tabset-fade tabset-pills">ICBe (ours)</h5>
 <div id="view" class="section level6 tabset tabset-fade tabset-pills">
 <h6 class="tabset tabset-fade tabset-pills">View:</h6>
 <p>Select a view</p>
 </div>
-<div id="crisis-map" class="section level6 tabset active tabset-fade tabset-pills">
+<div id="crisis-map"
+class="section level6 tabset active tabset-fade tabset-pills">
 <h6 class="tabset active tabset-fade tabset-pills">Crisis Map</h6>
-<p><a href="https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=Crisis+%23+107+Plot+%28Problem%20Here%29" target="_blank">Report Plot Problem</a></p>
-<p><img src="website_images/p_metro_plot_107.svg" loading="lazy" ></p>
+<p><a
+href="https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=Crisis+%23+107+Plot+%28Problem%20Here%29"
+target="_blank">Report Plot Problem</a></p>
+<p><img src="website_images/p_icbe_plot_107.svg" loading="lazy"  ></p>
 </div>
-<div id="crisis-narrative" class="section level6 tabset tabset-fade tabset-pills">
+<div id="crisis-narrative"
+class="section level6 tabset tabset-fade tabset-pills">
 <h6 class="tabset tabset-fade tabset-pills">Crisis Narrative</h6>
-<p><a href="https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=Crisis+%23+107+Table+%28Sentence%20%23s%20Here%29++%28Problem%20Here%29" target="_blank">Report Table Problem</a></p>
+<p><a
+href="https://github.com/CenterForPeaceAndSecurityStudies/icbe/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=Crisis+%23+107+Table+%28Sentence%20%23s%20Here%29++%28Problem%20Here%29"
+target="_blank">Report Table Problem</a></p>
 <p>HIROSHIMA-NAGASAKI (1945-1945)</p>
-<p><img src="website_images/ft_sentence_table_107.png" loading="lazy" ></p>
+<p><img src="website_images/ft_sentence_table_107.png" loading="lazy"  ></p>
 </div>
 </div>
 <div id="icb" class="section level5">
 <h5>ICB</h5>
-<p><img src="website_images/p_icb_metro_plot_107.svg" loading="lazy" ></p>
+<p><img src="website_images/p_icb_plot_107.svg" loading="lazy"  ></p>
 </div>
 <div id="phoenix" class="section level5">
 <h5>Phoenix</h5>
-<p><img src="website_images/p_phoenix_metro_plot_107.svg" loading="lazy" ></p>
+<p><img src="website_images/p_phoenix_plot_107.svg" loading="lazy"  ></p>
 </div>
 <div id="mids" class="section level5">
 <h5>MIDs</h5>
-<p><img src="website_images/p_mids_metro_plot_107.svg" loading="lazy" ></p>
+<p><img src="website_images/p_mids_plot_107.svg" loading="lazy"  ></p>
 </div>
 </div>
 

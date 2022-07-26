@@ -13,7 +13,7 @@
 
 <title>International Crisis Behaviors Events project (ICBe)</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -57,6 +57,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -81,6 +82,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -233,7 +237,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -263,7 +267,8 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">International Crisis Behaviors Events project (ICBe)</h1>
+<h1 class="title toc-ignore">International Crisis Behaviors Events
+project (ICBe)</h1>
 
 </div>
 
@@ -289,47 +294,75 @@ window.twttr = (function(d, s, id) {
 
 </script>
 <p><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0ACrisisEvents.Org%0A%0AThe%20first%20high%20coverage,%20recall,%20and%20precision%20international%20event%20dataset%0A%0AInternational%20Crisis%20Behaviors%20Events%20(ICBe)%0A475%20Crises%20(1918-2015)%0A117+%20Behaviors%0A10k+%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass">Share</a>’</p>
-<p>ICBe is a new high quality event dataset covering 475 international crises from 1918 to 2015.</p>
-<p>ICBe was developed by the <a href="https://cpass.ucsd.edu/">Center for Peace and Security Studies</a> at the University of California San Diego, with support from the University of Maryland, and the corresponding author is <a href="https://rexdouglass.com/">Rex W. Douglass</a> (@<a href="https://twitter.com/RexDouglass">RexDouglass</a>).</p>
+<p>ICBe is a new high quality event dataset covering 475 international
+crises from 1918 to 2015.</p>
+<p>ICBe was developed by the <a href="https://cpass.ucsd.edu/">Center
+for Peace and Security Studies</a> at the University of California San
+Diego, with support from the University of Maryland, and the
+corresponding author is <a href="https://rexdouglass.com/">Rex W.
+Douglass</a> (@<a
+href="https://twitter.com/RexDouglass">RexDouglass</a>).</p>
 <p>Read our introductory paper:</p>
 <blockquote>
-<p>“<a href="http://arxiv.org/abs/2202.07081">Introducing the ICBe Dataset: Very High Recall and Precision Event Extraction from Narratives about International Crises.</a>” Rex W. Douglass, Thomas Leo Scherer, J. Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan Wilkenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge. 2022. arXiv:2202.07081.</p>
+<p>“<a href="http://arxiv.org/abs/2202.07081">Introducing the ICBe
+Dataset: Very High Recall and Precision Event Extraction from Narratives
+about International Crises.</a>” Rex W. Douglass, Thomas Leo Scherer, J.
+Andrés Gannon, Erik Gartzke, Jon Lindsay, Shannon Carcelli, Jonathan
+Wilkenfeld, David M. Quinn, Catherine Aiken, Jose Miguel Cabezas
+Navarro, Neil Lund, Egle Murauskaite, and Diana Partridge. 2022.
+arXiv:2202.07081.</p>
 </blockquote>
 <p><br></p>
 <div id="what-is-an-international-crisis" class="section level2">
 <h2>What is an international crisis?</h2>
-<p>A crisis, like the Cuban Missile Crisis, is “a change in the type or an increase in the intensity of disruptive interaction with a heightened probability of military hostilities that destabilizes states’ relationships or challenges the structure of the international system” (Brecher and Wilkenfeld 1982).</p>
-<p>Our project is based on the amazing corpus of crisis summaries written by the <a href="http://www.icb.umd.edu/dataviewer/">ICB project</a>.</p>
+<p>A crisis, like the Cuban Missile Crisis, is “a change in the type or
+an increase in the intensity of disruptive interaction with a heightened
+probability of military hostilities that destabilizes states’
+relationships or challenges the structure of the international system”
+(Brecher and Wilkenfeld 1982).</p>
+<p>Our project is based on the amazing corpus of crisis summaries
+written by the <a href="http://www.icb.umd.edu/dataviewer/">ICB
+project</a>.</p>
 <p><br></p>
 </div>
 <div id="what-are-event-data-good-for" class="section level2">
 <h2>What are event data good for?</h2>
-<p>Event data let us describe and compare moments in history more easily.</p>
-<p>For example, we can produce detailed timelines called crisis-maps. Here’s an example of a map of the Cuban Missile Crisis with instructions for how to interpret each part.</p>
+<p>Event data let us describe and compare moments in history more
+easily.</p>
+<p>For example, we can produce detailed timelines called crisis-maps.
+Here’s an example of a map of the Cuban Missile Crisis with instructions
+for how to interpret each part.</p>
 <p style="text-align:center;">
 <img src="DemonstrationCrisisMap.svg" width="75%" />
 </p>
 <p><br></p>
 </div>
-<div id="how-does-icbe-improve-over-the-state-of-the-art" class="section level2">
+<div id="how-does-icbe-improve-over-the-state-of-the-art"
+class="section level2">
 <h2>How does ICBe improve over the state of the art?</h2>
-<p>ICBe is the first high coverage, high recall, and high precision event dataset of international relations.</p>
+<p>ICBe is the first high coverage, high recall, and high precision
+event dataset of international relations.</p>
 <ol style="list-style-type: decimal">
-<li>ICBe has very high coverage over the kinds of behaviors found in international relations (117+ kinds of behaviors).</li>
+<li>ICBe has very high coverage over the kinds of behaviors found in
+international relations (117+ kinds of behaviors).</li>
 </ol>
 <p style="text-align:center;">
 <img src="LitReview.png" width="75%" />
 </p>
 <p><br></p>
 <ol start="2" style="list-style-type: decimal">
-<li>ICBe has very high recall, the important events are likely to have been captured. Compare for yourself crisis-maps produced by ICBe versus each of the existing state of the art datasets.</li>
+<li>ICBe has very high recall, the important events are likely to have
+been captured. Compare for yourself crisis-maps produced by ICBe versus
+each of the existing state of the art datasets.</li>
 </ol>
 <p style="text-align:center;">
 <img src="CompetingExample.svg" width="75%" />
 </p>
 <p><br></p>
 <ol start="3" style="list-style-type: decimal">
-<li>ICBe has very high precision, the events that it codes are likely to have occured as described. Compare codings along with the original historical narratives.</li>
+<li>ICBe has very high precision, the events that it codes are likely to
+have occured as described. Compare codings along with the original
+historical narratives.</li>
 </ol>
 <p style="text-align:center;">
 <img src="ReadOriginalNarrative.svg" width="75%" />
@@ -340,9 +373,15 @@ window.twttr = (function(d, s, id) {
 <h2>Where should I start?</h2>
 <ol style="list-style-type: decimal">
 <li><p><a href="browse.html">Browse</a> the crises.</p></li>
-<li><p>Read the <a href="http://arxiv.org/abs/2202.07081">paper</a>.</p></li>
-<li><p><a href="https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/">Download the data</a> and use it downstream in your own projects.</p></li>
-<li><p><a href="https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0ACrisisEvents.Org%0A%0AThe%20first%20high%20coverage,%20recall,%20and%20precision%20international%20event%20dataset%0A%0AInternational%20Crisis%20Behaviors%20Events%20(ICBe)%0A475%20Crises%20(1918-2015)%0A117+%20Behaviors%0A10k+%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass">Share</a> on social media. Each crisis has an auto-generated twitter link for starting a discussion around a specific historical episode.</p></li>
+<li><p>Read the <a
+href="http://arxiv.org/abs/2202.07081">paper</a>.</p></li>
+<li><p><a
+href="https://github.com/CenterForPeaceAndSecurityStudies/ICBEdataset/">Download
+the data</a> and use it downstream in your own projects.</p></li>
+<li><p><a
+href="https://twitter.com/intent/tweet?text=%F0%9F%9A%A8New%20Dataset%20Alert%F0%9F%9A%A8%0A%0ACrisisEvents.Org%0A%0AThe%20first%20high%20coverage,%20recall,%20and%20precision%20international%20event%20dataset%0A%0AInternational%20Crisis%20Behaviors%20Events%20(ICBe)%0A475%20Crises%20(1918-2015)%0A117+%20Behaviors%0A10k+%20Human%20Coded%20Events%0A%0A@Cpassucsd%20@RexDouglass">Share</a>
+on social media. Each crisis has an auto-generated twitter link for
+starting a discussion around a specific historical episode.</p></li>
 </ol>
 </div>
 
